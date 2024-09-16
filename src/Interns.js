@@ -2,7 +2,7 @@ import React from 'react';
 
 const Interns = () => {
   const internMembers = [
-    { name: "Roshan Raj", position: "Tech Intern", image: "/HeadShot.jpeg" },
+    { name: "Roshan Raj", position: "Tech Intern", image: "/roshan.jpeg" },
   ];
 
   return (
