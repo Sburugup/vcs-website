@@ -401,33 +401,32 @@ const WhatWeDoPage = React.forwardRef((props, ref) => (
       </div>
       <div className="mb-12">
         <StyledSubheading>Strategies</StyledSubheading>
-        <p className="text-xl mt-4">
-          Education and Training: Offer comprehensive workshops, seminars, and simulations to
-          teach students the fundamentals of venture capital and startup investment.
-          Partnership Development: Build strong relationships with local venture capital firms,
+        <ul className="list-disc list-outside text-xl mt-4 pl-5 space-y-4">
+          <li>Education and Training: Offer comprehensive workshops, seminars, and simulations to
+          teach students the fundamentals of venture capital and startup investment.</li>
+          <li>Partnership Development: Build strong relationships with local venture capital firms,
           investors, and industry professionals to provide valuable insights and opportunities for
-          our members.
-          Practical Experience: Facilitate hands-on projects and internships that allow students to
-          apply their knowledge in real-world scenarios.
-          Inclusive Growth: Establish a two-tier committee system to include both experienced
+          our members.</li>            
+          <li>Practical Experience: Facilitate hands-on projects and internships that allow students to
+          apply their knowledge in real-world scenarios.</li>
+          <li>Inclusive Growth: Establish a two-tier committee system to include both experienced
           members and newcomers, ensuring continuous learning and development for all
-          participants.
-        </p>
+          participants.</li>
+        </ul>
       </div>
       <div>
         <StyledSubheading>Goals</StyledSubheading>
-        <p className="text-xl mt-4">
-          Educate at least 30 students quarterly on venture capital and investment strategies.
-          Form partnerships with at least 5 local venture capital firms and industry experts.
-          Conduct 4-7 educational workshops and practical simulations each quarter.
-          Develop a pipeline of talent through our Learning Development Team, transitioning them
-          to the Executive Board as they gain experience.
-        </p>
+        <ul className="list-disc list-outside text-xl mt-4 pl-5 space-y-4">
+          <li>Educate at least 30 students quarterly on venture capital and investment strategies.</li>
+          <li>Form partnerships with at least 5 local venture capital firms and industry experts.</li>
+          <li>Conduct 4-7 educational workshops and practical simulations each quarter.</li>
+          <li>Develop a pipeline of talent through our Learning Development Team, transitioning them
+          to the Executive Board as they gain experience.</li>
+        </ul>
       </div>
     </div>
   </div>
 ));
-
 const InteractiveButton = ({ label, onClick }) => (
   <motion.button
     onClick={onClick}
@@ -475,7 +474,7 @@ const Navigation = ({ currentPage, setPage }) => {
               <InstagramIcon size={24} />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/company/venture-capital-society-at-uci/"
+              href="https://www.linkedin.com/company/venture-capital-society-uci/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-yellow-400 transition-colors duration-300"
@@ -554,20 +553,20 @@ const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const events = [
-    { date: new Date(2023, 8, 30), title: "Meet the Board", description: "Board intro, get to know everyone" },
-    { date: new Date(2023, 9, 8), title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?" },
-    { date: new Date(2023, 9, 17), title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs" },
-    { date: new Date(2023, 9, 22), title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?" },
-    { date: new Date(2023, 10, 7), title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises" },
-    { date: new Date(2023, 10, 12), title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved" },
-    { date: new Date(2023, 10, 21), title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures" },
-    { date: new Date(2023, 10, 26), title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc." },
+    { date: new Date(2024, 8, 30), title: "Meet the Board", description: "Board intro, get to know everyone" },
+    { date: new Date(2024, 9, 8), title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?" },
+    { date: new Date(2024, 9, 17), title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs" },
+    { date: new Date(2024, 9, 22), title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?" },
+    { date: new Date(2024, 10, 7), title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises" },
+    { date: new Date(2024, 10, 12), title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved" },
+    { date: new Date(2024, 10, 21), title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures" },
+    { date: new Date(2024, 10, 26), title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc." },
   ];
 
   const months = [
-    { name: 'September', year: 2023, month: 8 },
-    { name: 'October', year: 2023, month: 9 },
-    { name: 'November', year: 2023, month: 10 }
+    { name: 'September', year: 2024, month: 8 },
+    { name: 'October', year: 2024, month: 9 },
+    { name: 'November', year: 2024, month: 10 }
   ];
 
   return (
