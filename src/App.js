@@ -55,23 +55,23 @@ const VCSWebsite = () => {
         {currentPage !== 'intro' && (
           <Navigation currentPage={currentPage} setPage={setCurrentPage} />
         )}
-          <AnimatePresence mode="wait">
-            {currentPage === 'intro' ? (
-              <IntroAnimation key="intro" />
-            ) : (
-              <motion.div
-                key={currentPage}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="w-full"
-              >
+        <AnimatePresence mode="wait">
+          {currentPage === 'intro' ? (
+            <IntroAnimation key="intro" />
+          ) : (
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="w-full"
+            >
               {renderPage(currentPage, setCurrentPage, scrollToWhoWeAre, scrollToWhatWeDo, whoWeAreRef, whatWeDoRef)}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
       <AnimatedCursor cursorPosition={cursorPosition} />
     </div>
   );
@@ -524,6 +524,7 @@ const AnimatedCursor = ({ cursorPosition }) => {
       className="fixed pointer-events-none z-50 text-yellow-400"
       animate={{ x: cursorPosition.x - 12, y: cursorPosition.y - 12 }}
       transition={{ type: 'spring', damping: 30, mass: 0.5 }}
+      style={{ mixBlendMode: 'difference' }}
     >
       <DollarSign size={24} />
     </motion.div>
@@ -551,6 +552,7 @@ const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, wh
 
 const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const currentMonthRef = useRef(null);
 
   const events = [
     { date: new Date(2024, 8, 30), title: "Meet the Board", description: "Board intro, get to know everyone" },
@@ -569,17 +571,30 @@ const EventsPage = () => {
     { name: 'November', year: 2024, month: 10 }
   ];
 
+  const currentMonth = new Date().getMonth();
+  const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    if (currentMonthRef.current) {
+      currentMonthRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-purple-900 text-white py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-12">Upcoming Events</h1>
         {months.map((monthData) => (
-          <Calendar 
-            key={monthData.name} 
-            monthData={monthData} 
-            events={events.filter(event => event.date.getMonth() === monthData.month)}
-            onEventClick={setSelectedEvent}
-          />
+          <div
+            key={monthData.name}
+            ref={monthData.month === currentMonth && monthData.year === currentYear ? currentMonthRef : null}
+          >
+            <Calendar 
+              monthData={monthData} 
+              events={events.filter(event => event.date.getMonth() === monthData.month)}
+              onEventClick={setSelectedEvent}
+            />
+          </div>
         ))}
       </div>
       <AnimatePresence>
@@ -647,7 +662,9 @@ const EventModal = ({ event, onClose }) => (
       onClick={e => e.stopPropagation()}
     >
       <h2 className="text-3xl font-bold mb-4 text-yellow-400">{event.title}</h2>
-      <p className="text-xl mb-4">{event.date.toDateString()}</p>
+      <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
+      <p className="text-xl mb-4">Time: 6:30 PM - 7:30 PM</p>
+      <p className="text-xl mb-4">Location: MSTB 124</p>
       <p className="text-lg">{event.description}</p>
       <button 
         onClick={onClose}
