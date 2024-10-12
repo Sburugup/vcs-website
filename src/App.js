@@ -555,14 +555,14 @@ const EventsPage = () => {
   const currentMonthRef = useRef(null);
 
   const events = [
-    { date: new Date(2024, 8, 30), title: "Meet the Board", description: "Board intro, get to know everyone" },
-    { date: new Date(2024, 9, 8), title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?" },
-    { date: new Date(2024, 9, 17), title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs" },
-    { date: new Date(2024, 9, 22), title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?" },
-    { date: new Date(2024, 10, 7), title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises" },
-    { date: new Date(2024, 10, 12), title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved" },
-    { date: new Date(2024, 10, 21), title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures" },
-    { date: new Date(2024, 10, 26), title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc." },
+    { date: new Date(2024, 8, 30), location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone" },
+    { date: new Date(2024, 9, 8), location: "MSTB 124", title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?" },
+    { date: new Date(2024, 9, 17), location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs" },
+    { date: new Date(2024, 9, 22), location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?" },
+    { date: new Date(2024, 10, 7), location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises" },
+    { date: new Date(2024, 10, 12), location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved" },
+    { date: new Date(2024, 10, 21), location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures" },
+    { date: new Date(2024, 10, 26), location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc." },
   ];
 
   const months = [
@@ -664,7 +664,7 @@ const EventModal = ({ event, onClose }) => (
       <h2 className="text-3xl font-bold mb-4 text-yellow-400">{event.title}</h2>
       <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
       <p className="text-xl mb-4">Time: 6:30 PM - 7:30 PM</p>
-      <p className="text-xl mb-4">Location: MSTB 124</p>
+      <p className="text-xl mb-4">Location: {event.location}</p>
       <p className="text-lg">{event.description}</p>
       <button 
         onClick={onClose}
