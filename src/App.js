@@ -698,17 +698,17 @@ const CollabsPage = () => (
 
 const ExecTeam = () => {
   const execMembers = [
-    { name: 'Mihika Guntur', position: 'President', image: mihikaImg },
-    { name: 'Divija Mudumbai', position: 'Co-Exec Vice President', image: divijaImg },
-    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg },
-    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg },
-    { name: 'Meghana Burugupalli', position: 'VP of Technology', image: meghanaImg },
-    { name: 'Christian Mccormick', position: 'VP of External Affairs', image: christianImg },
-    { name: 'Ritika Ramnani', position: 'Co-VP of Marketing', image: ritikaImg },
-    { name: 'Sheryl Gupta', position: 'Co-VP of Marketing', image: sherylImg },
-    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg },
-    { name: 'Matt Ayabe', position: 'VP of Engagement', image: mattImg },
-    { name: 'Kyle King', position: 'VP of Finance', image: kyleImg }
+    { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'www.linkedin.com/in/mihika-guntur'},
+    { name: 'Divija Mudumbai', position: 'Co-Exec Vice President', image: divijaImg, linkedin: 'https://www.linkedin.com/in/divija-mudumbai'},
+    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg, linkedin: ''},
+    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg, linkedin: ''},
+    { name: 'Meghana Burugupalli', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://www.linkedin.com/in/srimeghana-burugupalli-913725248?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9YUMziROShm9jcc1p7%2BhHw%3D%3D'},
+    { name: 'Christian Mccormick', position: 'VP of External Affairs', image: christianImg, linkedin: ''},
+    { name: 'Ritika Ramnani', position: 'Co-VP of Marketing', image: ritikaImg, linkedin: 'https://www.linkedin.com/in/ritika-ramnani-02090920b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'},
+    { name: 'Sheryl Gupta', position: 'Co-VP of Marketing', image: sherylImg, linkedin: 'https://www.linkedin.com/in/sheryl-gupta28'},
+    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'www.linkedin.com/in/mihika-guntur'},
+    { name: 'Matt Ayabe', position: 'VP of Engagement', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
+    { name: 'Kyle King', position: 'VP of Finance', image: kyleImg, linkedin: 'linkedin.com/in/king-kyle/'}
   ];
 
   return (
@@ -724,7 +724,19 @@ const ExecTeam = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400" />
-            <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+            <div className="flex items-center justify-center gap-2">
+              <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+              {member.linkedin && (
+                <a 
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-yellow-400 transition-colors duration-200"
+                >
+                  <LinkedinIcon size={20} />
+                </a>
+              )}
+            </div>
             <p className="text-xl text-yellow-400">{member.position}</p>
           </motion.div>
         ))}
@@ -733,11 +745,12 @@ const ExecTeam = () => {
   );
 };
 
+
 const Interns = () => {
   const internMembers = [
-    { name: "Roshan Raj", position: "Tech Intern", image: roshanImg },
-    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg},
-    {name: "Bhavya Jain", position: "Professional Development Intern", image: bhavyaImg}
+    { name: "Roshan Raj", position: "Tech Intern", image: roshanImg, linkedin: ''},
+    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: ''},
+    {name: "Bhavya Jain", position: "Professional Development Intern", image: bhavyaImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
   ];
 
   return (
@@ -753,7 +766,19 @@ const Interns = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400" />
-            <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+            <div className="flex items-center justify-center gap-2">
+              <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+              {member.linkedin && (
+                <a 
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-yellow-400 transition-colors duration-200"
+                >
+                  <LinkedinIcon size={20} />
+                </a>
+              )}
+            </div>
             <p className="text-xl text-yellow-400">{member.position}</p>
           </motion.div>
         ))}
