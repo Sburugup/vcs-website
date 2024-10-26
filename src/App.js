@@ -698,15 +698,15 @@ const CollabsPage = () => (
 
 const ExecTeam = () => {
   const execMembers = [
-    { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'www.linkedin.com/in/mihika-guntur'},
+    { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'https://www.linkedin.com/in/mihika-guntur/'},
     { name: 'Divija Mudumbai', position: 'Co-Exec Vice President', image: divijaImg, linkedin: 'https://www.linkedin.com/in/divija-mudumbai'},
-    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg, linkedin: ''},
-    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg, linkedin: ''},
+    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg, linkedin: 'https://www.linkedin.com/in/hm1711/'},
+    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg, linkedin: 'https://www.linkedin.com/in/ayaandhir/'},
     { name: 'Meghana Burugupalli', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://www.linkedin.com/in/srimeghana-burugupalli-913725248?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9YUMziROShm9jcc1p7%2BhHw%3D%3D'},
     { name: 'Christian Mccormick', position: 'VP of External Affairs', image: christianImg, linkedin: ''},
     { name: 'Ritika Ramnani', position: 'Co-VP of Marketing', image: ritikaImg, linkedin: 'https://www.linkedin.com/in/ritika-ramnani-02090920b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'},
     { name: 'Sheryl Gupta', position: 'Co-VP of Marketing', image: sherylImg, linkedin: 'https://www.linkedin.com/in/sheryl-gupta28'},
-    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'www.linkedin.com/in/mihika-guntur'},
+    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sudaaychaloo/'},
     { name: 'Matt Ayabe', position: 'VP of Engagement', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
     { name: 'Kyle King', position: 'VP of Finance', image: kyleImg, linkedin: 'linkedin.com/in/king-kyle/'}
   ];
@@ -749,7 +749,7 @@ const ExecTeam = () => {
 const Interns = () => {
   const internMembers = [
     { name: "Roshan Raj", position: "Tech Intern", image: roshanImg, linkedin: ''},
-    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: ''},
+    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
     {name: "Bhavya Jain", position: "Professional Development Intern", image: bhavyaImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
   ];
 
