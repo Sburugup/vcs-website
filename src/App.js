@@ -16,7 +16,11 @@ import sherylImg from './sheryl.png'
 import roshanImg from './roshan.png';
 import bareeraImg from './bareera.png';
 import bhavyaImg from './bhavya.JPEG';
-
+import boardIntroImg from './VCSBoardIntro.png'
+import comingSoonImg from './VCSComingSoon.png'
+import nikhilSpeakerEventImg from './VCSNikhilSpeakerEvent.png'
+import qualVsQuantImg from './VCSQualvsQuant.png'
+import whatIsVCImg from './VCSWhatIsVC.png' 
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
@@ -555,14 +559,14 @@ const EventsPage = () => {
   const currentMonthRef = useRef(null);
 
   const events = [
-    { date: new Date(2024, 8, 30), location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone" },
-    { date: new Date(2024, 9, 8), location: "MSTB 124", title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?" },
-    { date: new Date(2024, 9, 17), location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs" },
-    { date: new Date(2024, 9, 22), location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?" },
-    { date: new Date(2024, 10, 7), location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises" },
-    { date: new Date(2024, 10, 12), location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved" },
-    { date: new Date(2024, 10, 21), location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures" },
-    { date: new Date(2024, 10, 26), location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc." },
+    { date: new Date(2024, 8, 30), location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroImg },
+    { date: new Date(2024, 9, 8), location: "MSTB 124", title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?", image: whatIsVCImg},
+    { date: new Date(2024, 9, 17), location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeakerEventImg},
+    { date: new Date(2024, 9, 22), location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantImg},
+    { date: new Date(2024, 10, 7), location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises", image:  comingSoonImg},
+    { date: new Date(2024, 10, 12), location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved", image: comingSoonImg},
+    { date: new Date(2024, 10, 21), location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: comingSoonImg},
+    { date: new Date(2024, 10, 26), location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: comingSoonImg},
   ];
 
   const months = [
@@ -658,23 +662,35 @@ const EventModal = ({ event, onClose }) => (
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 50, opacity: 0 }}
-      className="bg-purple-800 p-8 rounded-lg max-w-2xl w-full"
+      className="bg-purple-800 p-8 rounded-lg max-w-4xl w-full"
       onClick={e => e.stopPropagation()}
     >
-      <h2 className="text-3xl font-bold mb-4 text-yellow-400">{event.title}</h2>
-      <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
-      <p className="text-xl mb-4">Time: 6:30 PM - 7:30 PM</p>
-      <p className="text-xl mb-4">Location: {event.location}</p>
-      <p className="text-lg">{event.description}</p>
-      <button 
-        onClick={onClose}
-        className="mt-6 bg-yellow-400 text-purple-900 px-4 py-2 rounded-full font-bold hover:bg-white transition duration-300"
-      >
-        Close
-      </button>
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="md:w-1/2">
+          <img 
+            src={event.image} 
+            alt={event.title}
+            className="w-full h-64 object-cover rounded-lg mb-4"
+          />
+        </div>
+        <div className="md:w-1/2">
+          <h2 className="text-3xl font-bold mb-4 text-yellow-400">{event.title}</h2>
+          <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
+          <p className="text-xl mb-4">Time: 6:30 PM - 7:30 PM</p>
+          <p className="text-xl mb-4">Location: {event.location}</p>
+          <p className="text-lg">{event.description}</p>
+          <button 
+            onClick={onClose}
+            className="mt-6 bg-yellow-400 text-purple-900 px-4 py-2 rounded-full font-bold hover:bg-white transition duration-300"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </motion.div>
   </motion.div>
 );
+
 
 const CollabsPage = () => (
   <div className="flex flex-col items-center justify-center min-h-screen bg-purple-900 text-white py-20 px-4">
@@ -698,15 +714,15 @@ const CollabsPage = () => (
 
 const ExecTeam = () => {
   const execMembers = [
-    { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'https://www.linkedin.com/in/mihika-guntur/'},
+    { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'www.linkedin.com/in/mihika-guntur'},
     { name: 'Divija Mudumbai', position: 'Co-Exec Vice President', image: divijaImg, linkedin: 'https://www.linkedin.com/in/divija-mudumbai'},
-    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg, linkedin: 'https://www.linkedin.com/in/hm1711/'},
-    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg, linkedin: 'https://www.linkedin.com/in/ayaandhir/'},
+    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg, linkedin: ''},
+    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg, linkedin: ''},
     { name: 'Meghana Burugupalli', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://www.linkedin.com/in/srimeghana-burugupalli-913725248?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9YUMziROShm9jcc1p7%2BhHw%3D%3D'},
     { name: 'Christian Mccormick', position: 'VP of External Affairs', image: christianImg, linkedin: ''},
     { name: 'Ritika Ramnani', position: 'Co-VP of Marketing', image: ritikaImg, linkedin: 'https://www.linkedin.com/in/ritika-ramnani-02090920b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'},
     { name: 'Sheryl Gupta', position: 'Co-VP of Marketing', image: sherylImg, linkedin: 'https://www.linkedin.com/in/sheryl-gupta28'},
-    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sudaaychaloo/'},
+    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'www.linkedin.com/in/mihika-guntur'},
     { name: 'Matt Ayabe', position: 'VP of Engagement', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
     { name: 'Kyle King', position: 'VP of Finance', image: kyleImg, linkedin: 'linkedin.com/in/king-kyle/'}
   ];
@@ -749,7 +765,7 @@ const ExecTeam = () => {
 const Interns = () => {
   const internMembers = [
     { name: "Roshan Raj", position: "Tech Intern", image: roshanImg, linkedin: ''},
-    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
+    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: ''},
     {name: "Bhavya Jain", position: "Professional Development Intern", image: bhavyaImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
   ];
 
