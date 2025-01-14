@@ -1028,7 +1028,7 @@ const TeamPage = () => (
 const MembershipPage = () => {
   const membershipBenefits = [
     "Access to our weekly newsletter featuring exclusive events and opportunities",
-    "Personalized mentorship opportunities with experienced professionals",
+    "Personalized mentorship opportunities",
     "Access to exclusive workshops with industry guest speakers and supplementary materials",
     "Regular updates on internship and fellowship opportunities in venture capital",
     "Complimentary VCS merchandise and professional headshot photography sessions",
