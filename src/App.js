@@ -17,10 +17,18 @@ import roshanImg from './roshan.png';
 import bareeraImg from './bareera.png';
 import bhavyaImg from './bhavya.JPEG';
 import boardIntroImg from './VCSBoardIntro.png'
-import comingSoonImg from './VCSComingSoon.png'
 import nikhilSpeakerEventImg from './VCSNikhilSpeakerEvent.png'
 import qualVsQuantImg from './VCSQualvsQuant.png'
 import whatIsVCImg from './VCSWhatIsVC.png' 
+import memberSocialImg from './VCSMemberSocial.png'
+import felipeSpeakerEventImg from './VCSFelipeSpeakerEvent.png'
+import himanshuSpeakerEventImg from './VCSHimanshuSpeakerEvent.png'
+import mastersEventImg from './VCSxMFCMastersEvent.png'
+import caseStudiesEventImg from './VCSCaseStudies.png'
+import membershipImg from './VCSMembership.png'
+import winterAnalystProgramImg from './VCSWinterAnalystProgram.png'
+import boardImg from './VCSBoard.png'
+
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
@@ -329,8 +337,8 @@ const HomePage = ({ setPage, scrollToWhoWeAre, scrollToWhatWeDo, whoWeAreRef, wh
           </motion.p>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
             <InteractiveButton label="Who We Are" onClick={scrollToWhoWeAre} />
-            <InteractiveButton label="Join Us" onClick={() => setPage('join')} />
             <InteractiveButton label="What We Do" onClick={scrollToWhatWeDo} />
+            <InteractiveButton label="Upcoming Events" onClick={() => setPage('events')} />
           </div>
         </div>
       </div>
@@ -431,6 +439,7 @@ const WhatWeDoPage = React.forwardRef((props, ref) => (
     </div>
   </div>
 ));
+
 const InteractiveButton = ({ label, onClick }) => (
   <motion.button
     onClick={onClick}
@@ -444,6 +453,29 @@ const InteractiveButton = ({ label, onClick }) => (
 
 const Navigation = ({ currentPage, setPage }) => {
   const [showEmail, setShowEmail] = useState(false);
+  const [showJoinDropdown, setShowJoinDropdown] = useState(false);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showJoinDropdown && !event.target.closest('.join-dropdown')) {
+        setShowJoinDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showJoinDropdown]);
+
+  const handleMembershipClick = () => {
+    setPage('join');
+    setShowJoinDropdown(false); // Close dropdown after selection
+  };
+
+  const handleAnalystProgramClick = () => {
+    setPage('analystProgram');
+    setShowJoinDropdown(false);
+  }
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-20 bg-purple-900 bg-opacity-90 shadow-md">
@@ -453,7 +485,8 @@ const Navigation = ({ currentPage, setPage }) => {
           <h1 className="text-xl font-bold text-white hidden md:block">Venture Capital Society</h1>
         </div>
         <div className="flex items-center space-x-2">
-          {['home', 'events', 'collabs', 'team', 'join'].map((page) => (
+          {/* Regular navigation buttons */}
+          {['home', 'events', 'partnerships', 'team'].map((page) => (
             <motion.button
               key={page}
               onClick={() => setPage(page)}
@@ -466,6 +499,47 @@ const Navigation = ({ currentPage, setPage }) => {
               {page.charAt(0).toUpperCase() + page.slice(1)}
             </motion.button>
           ))}
+
+          {/* Join Dropdown */}
+          <div className="relative join-dropdown">
+            <motion.button
+              onClick={() => setShowJoinDropdown(!showJoinDropdown)}
+              className={`px-3 py-1 rounded-full text-sm font-bold ${
+                currentPage === 'join' ? 'bg-yellow-400 text-purple-900' : 'bg-purple-800 text-white'
+              }`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Join
+            </motion.button>
+            <AnimatePresence>
+              {showJoinDropdown && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute right-0 mt-2 py-2 w-48 bg-purple-800 rounded-lg shadow-xl z-50"
+                >
+                  <motion.button
+                    onClick={handleMembershipClick}
+                    className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                    whileHover={{ x: 5 }}
+                  >
+                    Membership
+                  </motion.button>
+                  <motion.button
+                    onClick={handleAnalystProgramClick}
+                    className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                    whileHover={{ x: 5 }}
+                  >
+                    AnalystProgram
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Social Media Icons */}
           <div className="flex items-center space-x-2 ml-4">
             <motion.a
               href="https://www.instagram.com/vcs.uci?igsh=MWQ1ZGUxMzBkMA=="
@@ -541,13 +615,15 @@ const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, wh
     case 'home':
       return <HomePage setPage={setPage} scrollToWhoWeAre={scrollToWhoWeAre} scrollToWhatWeDo={scrollToWhatWeDo} whoWeAreRef={whoWeAreRef} whatWeDoRef={whatWeDoRef} />;
     case 'events':
-      return <EventsPage />;
-    case 'collabs':
-      return <CollabsPage />;
+      return <EventsPage/>;
+    case 'partnerships':
+      return <PartnershipsPage/>;
     case 'team':
-      return <TeamPage />;
+      return <TeamPage/>;
     case 'join':
-      return <JoinPage />;
+      return <MembershipPage/>;
+    case 'analystProgram':
+      return <AnalystProgramPage/>;
     default:
       return <HomePage setPage={setPage} scrollToWhoWeAre={scrollToWhoWeAre} scrollToWhatWeDo={scrollToWhatWeDo} whoWeAreRef={whoWeAreRef} whatWeDoRef={whatWeDoRef} />;
   }
@@ -559,20 +635,43 @@ const EventsPage = () => {
   const currentMonthRef = useRef(null);
 
   const events = [
-    { date: new Date(2024, 8, 30), location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroImg },
-    { date: new Date(2024, 9, 8), location: "MSTB 124", title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?", image: whatIsVCImg},
-    { date: new Date(2024, 9, 17), location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeakerEventImg},
-    { date: new Date(2024, 9, 22), location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantImg},
-    { date: new Date(2024, 10, 7), location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises", image:  comingSoonImg},
-    { date: new Date(2024, 10, 12), location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved", image: comingSoonImg},
-    { date: new Date(2024, 10, 21), location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: comingSoonImg},
-    { date: new Date(2024, 10, 26), location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: comingSoonImg},
+    { date: new Date(2024, 8, 30), time: '6:30 PM - 7:30 PM',  location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroImg },
+    { date: new Date(2024, 9, 8), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?", image: whatIsVCImg},
+    { date: new Date(2024, 9, 17), time: '6:30 PM - 7:30 PM', location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeakerEventImg},
+    { date: new Date(2024, 9, 22), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantImg},
+    { date: new Date(2024, 10, 7), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises", image: felipeSpeakerEventImg},
+    { date: new Date(2024, 10, 12), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved", image: memberSocialImg},
+    { date: new Date(2024, 10, 18), time: '6:30 PM - 7:30 PM', location: "SBI 5200", title: "Speciality Masters Program Information Session", description: "We are teaming up with the Math and Finance Club to bring you the Speciality Masters Program information session!", image: mastersEventImg},
+    { date: new Date(2024, 10, 21), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: himanshuSpeakerEventImg},
+    { date: new Date(2024, 10, 26), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: caseStudiesEventImg},
+    { date: new Date(2025, 0, 13), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Research and Investment Memos", description: "Join us for our first week of our 'Analyst Program' where you'll learn the basics of market research and how to create an effective investment memo.", image: ''},
+    { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: ''},
+    { date: new Date(2025, 0, 15), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Grant Van Cleve", description: "Managing Partner @Hangar 75 Ventures", image: ''},
+    { date: new Date(2025, 0, 20), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Sourcing and Due Dilligence", description: "Join us for our second week of our 'Analyst Program'!", image: ''},
+    { date: new Date(2025, 0, 22), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Bank Tech Ventures Panel", description: "Carry Ransom and Katie Quelling", image: ''},
+    { date: new Date(2025, 0, 27), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Product-Market Fit", description: "", image: ''},
+    { date: new Date(2025, 0, 29), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Amrit Panjabi", description: "CB Insights and Alumni Ventures", image: ''},
+    { date: new Date(2025, 1, 5), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Ken Funahashi", description: "Wilson Sonsini", image: ''},
+    { date: new Date(2025, 1, 10), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: KPI's and Unit Economics", description: "", image: ''},
+    { date: new Date(2025, 1, 12), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker", description: "Stay tuned to find out about our guest speaker!", image: ''},
+    { date: new Date(2025, 1, 17), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Sizing and Valuation", description: "", image: ''},
+    { date: new Date(2025, 1, 19), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker", description: "Stay tuned to find out about our guest speaker!", image: ''},
+    { date: new Date(2025, 1, 24), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Term Sheets and Financing", description: "", image: ''},
+    { date: new Date(2025, 2, 3), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: VC Exits and Fund Operations", description: "", image: ''},
+
   ];
 
   const months = [
     { name: 'September', year: 2024, month: 8 },
     { name: 'October', year: 2024, month: 9 },
-    { name: 'November', year: 2024, month: 10 }
+    { name: 'November', year: 2024, month: 10 },
+    { name: 'December', year: 2024, month: 11 },
+    { name: 'January', year: 2025, month: 0 },
+    { name: 'February', year: 2025, month: 1 },
+    { name: 'March', year: 2025, month: 2 },
+    { name: 'April', year: 2025, month: 3 },
+    { name: 'May', year: 2025, month: 4 },
+    { name: 'June', year: 2025, month: 5 }
   ];
 
   const currentMonth = new Date().getMonth();
@@ -676,7 +775,7 @@ const EventModal = ({ event, onClose }) => (
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold mb-4 text-yellow-400">{event.title}</h2>
           <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
-          <p className="text-xl mb-4">Time: 6:30 PM - 7:30 PM</p>
+          <p className="text-xl mb-4">Time: {event.time}</p>
           <p className="text-xl mb-4">Location: {event.location}</p>
           <p className="text-lg">{event.description}</p>
           <button 
@@ -692,25 +791,138 @@ const EventModal = ({ event, onClose }) => (
 );
 
 
-const CollabsPage = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen bg-purple-900 text-white py-20 px-4">
-    <h2 className="text-3xl font-bold mb-8">Collaborations</h2>
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="text-center"
-    >
-      <h3 className="text-7xl md:text-9xl font-extrabold text-yellow-400 opacity-80 mb-8">
-        Coming Soon
-      </h3>
-      <p className="text-xl max-w-2xl mx-auto">
-        We're working on exciting collaborations to enhance your experience. 
-        Stay tuned for updates on our partnerships and joint initiatives!
-      </p>
-    </motion.div>
-  </div>
-);
+const PartnershipsPage = () => {
+  const [openSections, setOpenSections] = useState({
+    startupHelp: false,
+    vcHelp: false
+  });
+
+  const toggleSection = (section) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  return (
+    <div className="min-h-screen bg-purple-900 text-white py-20 px-4">
+      {/* Header Section */}
+      <div className="max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-purple-800 rounded-lg p-8 mb-16">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-6">Welcome to VCS at UCI</h2>
+            <p className="text-lg space-y-4">
+              At VCS at UCI, our analysts undergo a <span className="text-yellow-400">rigorous 9-week intensive training program</span> designed to equip them with the critical skills needed in the venture capital industry. From <span className="text-yellow-400">mastering due diligence</span> to <span className="text-yellow-400">understanding market dynamics</span> and <span className="text-yellow-400">crafting compelling pitches</span>, our members are well-prepared to provide valuable support to startups and VC firms alike. Their hands-on experience and multidisciplinary backgrounds make them uniquely qualified to tackle real-world challenges and deliver impactful solutions.
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <img 
+              src={boardImg} 
+              alt="VCS Board" 
+              className="rounded-lg shadow-lg max-w-full h-auto"
+            />
+          </div>
+        </div>
+
+        {/* For Startups Section */}
+        <div className="bg-purple-800 rounded-lg p-8 mb-8">
+          <h2 className="text-3xl font-bold mb-6">For Startups</h2>
+          <p className="text-lg mb-6">
+            At VCS at UCI, we're committed to supporting innovative startups by providing <span className="text-yellow-400">hands-on venture consulting services</span>. Our diverse members, hailing from various academic backgrounds, share a strong passion for entrepreneurship, problem-solving, and market analysis. We're eager to collaborate with your startup, offering a <span className="text-yellow-400">dedicated team for an 8-week project</span> during <span className="text-yellow-400">Spring 2025, and all quarters starting Fall 2025</span>. This collaboration will be mutually beneficial, leveraging our members' talents and providing your startup actionable insights and strategic support.
+          </p>
+          
+          <div className="space-y-4">
+            <div className="border border-purple-600 rounded-lg overflow-hidden">
+              <button 
+                className="w-full flex justify-between items-center p-4 bg-purple-700 hover:bg-purple-600 transition-colors"
+                onClick={() => toggleSection('startupHelp')}
+              >
+                <span className="text-xl font-semibold">How we can help you</span>
+                <span className="text-2xl">{openSections.startupHelp ? '−' : '+'}</span>
+              </button>
+              
+              <AnimatePresence>
+                {openSections.startupHelp && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-purple-800"
+                  >
+                    <div className="p-4 space-y-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-yellow-400">Pitch Deck Development</h3>
+                        <p className="ml-4">Craft <span className="text-yellow-400">compelling and data-driven pitch decks</span> tailored to capture investor interest and effectively communicate your vision.</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-yellow-400">VC Insights and Metrics</h3>
+                        <p className="ml-4">Provide guidance on the <span className="text-yellow-400">metrics that matter most to venture capitalists</span> and how to align your narrative to resonate with them.</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-yellow-400">Investor Matching</h3>
+                        <p className="ml-4">Research and identify investors who <span className="text-yellow-400">align with your industry, stage, and funding needs</span> to maximize your chances of success.</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+
+        {/* For VC Firms Section */}
+        <div className="bg-purple-800 rounded-lg p-8">
+          <h2 className="text-3xl font-bold mb-6">For VC Firms</h2>
+          <p className="text-lg mb-6">
+            VCS at UCI is a student-led organization that specializes in <span className="text-yellow-400">venture capital practices including sourcing, due diligence, market research, and investment analysis</span>. Our members bring a variety of skills and experiences, with many having completed <span className="text-yellow-400">internships in VC, PE, and tech sectors</span>. We're excited about the opportunity to partner with your firm on an <span className="text-yellow-400">8-week project, available in Spring 2025, and all quarters starting Fall 2025</span>, that will not only enhance our members' learning but also add value to your firm through fresh perspectives and rigorous analysis.
+          </p>
+          
+          <div className="space-y-4">
+            <div className="border border-purple-600 rounded-lg overflow-hidden">
+              <button 
+                className="w-full flex justify-between items-center p-4 bg-purple-700 hover:bg-purple-600 transition-colors"
+                onClick={() => toggleSection('vcHelp')}
+              >
+                <span className="text-xl font-semibold">How we can help you</span>
+                <span className="text-2xl">{openSections.vcHelp ? '−' : '+'}</span>
+              </button>
+              
+              <AnimatePresence>
+                {openSections.vcHelp && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-purple-800"
+                  >
+                    <div className="p-4 space-y-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-yellow-400">Due Diligence</h3>
+                        <p className="ml-4">Conduct <span className="text-yellow-400">thorough research and analysis</span> of potential investments, providing actionable insights to inform your decision-making process.</p>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-yellow-400">Market Research</h3>
+                        <div className="ml-4 space-y-2">
+                          <p>Analyze <span className="text-yellow-400">industry trends, competitive landscapes, and market opportunities</span> to support strategic investments and portfolio growth.</p>
+                          <h4 className="text-md font-semibold text-yellow-400">Competitive Analysis</h4>
+                          <p className="ml-4">Evaluate competitors to identify <span className="text-yellow-400">strengths, weaknesses, and market positioning</span>, aiding in portfolio company strategy and investment decisions.</p>
+                          <h4 className="text-md font-semibold text-yellow-400">Portfolio Company Support</h4>
+                          <p className="ml-4">Offer <span className="text-yellow-400">flexible support tailored to the needs</span> of your portfolio companies, such as financial modeling or market entry strategy development.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const ExecTeam = () => {
   const execMembers = [
@@ -764,7 +976,7 @@ const ExecTeam = () => {
 
 const Interns = () => {
   const internMembers = [
-    { name: "Roshan Raj", position: "Tech Intern", image: roshanImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
+    { name: "Roshan Raj", position: "Technology Intern", image: roshanImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
     {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
     {name: "Bhavya Jain", position: "Professional Development Intern", image: bhavyaImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
   ];
@@ -813,24 +1025,237 @@ const TeamPage = () => (
   </div>
 );
 
-const JoinPage = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen bg-purple-900 text-white py-20 px-4">
-    <StyledTitle>Join Us</StyledTitle>
-    <p className="text-xl mb-8 text-center max-w-2xl">
-      Interested in joining? We're excited to welcome new members who are passionate about venture capital and entrepreneurship. 
-      Fill out our membership form to get started on your journey with VCS at UCI!
-    </p>
-    <motion.a
-      href="https://forms.gle/UhzCQZrvp4Y1bgS38"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="px-6 py-3 bg-yellow-400 text-purple-900 rounded-full font-bold hover:bg-white hover:text-purple-900 transition duration-300"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      Membership Form
-    </motion.a>
-  </div>
-);
+const MembershipPage = () => {
+  const membershipBenefits = [
+    "Access to our weekly newsletter featuring exclusive events and opportunities",
+    "Personalized mentorship opportunities with experienced professionals",
+    "Access to exclusive workshops with industry guest speakers and supplementary materials",
+    "Regular updates on internship and fellowship opportunities in venture capital",
+    "Complimentary VCS merchandise and professional headshot photography sessions",
+    "Participation in our community events, including social gatherings and retreats"
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+              Join VCS at UCI
+            </h1>
+            <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto mb-8">
+              Take the next step in your venture capital journey by becoming a member of UCI's premier venture capital organization
+            </p>
+            <motion.a
+              href="https://forms.gle/uGiyGwdhkKUQTTxY9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Apply Now
+            </motion.a>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Main Content */}
+          <div className="space-y-8">
+            <motion.div 
+              className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h2 className="text-3xl font-bold mb-4 text-yellow-400">
+                Winter Quarter Membership
+              </h2>
+              <p className="text-xl text-purple-100">
+                Join now for just <span className="text-yellow-400 font-bold">$5</span> and unlock a comprehensive suite of benefits designed to accelerate your growth in venture capital.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+                Exclusive Benefits
+              </h2>
+              <div className="space-y-4">
+                {membershipBenefits.map((benefit, index) => (
+                  <motion.div 
+                    key={index}
+                    className="flex items-start space-x-3 group"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 * index }}
+                  >
+                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
+                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Image and Limited Time Box */}
+          <div className="space-y-8">
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <img 
+                src={membershipImg}
+                alt="VCS Membership Benefits"
+                className="rounded-xl shadow-2xl w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent rounded-xl"></div>
+            </motion.div>
+
+            <motion.div 
+              className="bg-yellow-400 rounded-xl p-8 text-purple-900"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h2 className="text-2xl font-bold mb-4">
+                🌟 Limited Time Opportunity
+              </h2>
+              <p className="text-lg">
+                The first 25 members to join will receive enhanced benefits, including direct mentorship pairing and participation in our exclusive mentorship family program.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AnalystProgramPage = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+              Analyst Program
+            </h1>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Main Content */}
+          <div className="space-y-8">
+            {/* Main Description */}
+            <motion.div 
+              className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+                Mastering the Fundamentals of Venture Capital
+              </h2>
+              <div className="space-y-6 text-lg text-purple-100">
+                <p>
+                  The heart of our Analyst Program is a <span className="font-bold text-yellow-300">weekly exploration of critical concepts in venture capital and entrepreneurship</span>. Through <span className="font-bold text-yellow-300">interactive sessions, industry insights, and practical case studies</span>, we break down one essential topic each week. This structured approach equips our analysts with the tools to excel in sourcing deals, performing due diligence, analyzing markets, and understanding the intricate mechanics of startups and venture firms.
+                </p>
+                <p>
+                  Our program is designed not only to prepare members for competitive VC roles but also to sharpen their strategic thinking and analytical skills. By the end of the program, participants emerge with the confidence and expertise needed to navigate the dynamic world of venture capital.
+                </p>
+                <p className="font-medium text-yellow-300">
+                  Stay tuned for more updates as we dive into the core of venture capital, one topic at a time.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Membership Note */}
+            <motion.div 
+              className="bg-yellow-400/10 rounded-xl p-6 backdrop-blur-sm border border-yellow-400/30"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <p className="text-lg">
+                <span className="text-yellow-400">Note:</span> The Analyst Program events are open to all UCI students. While membership is not required to attend, we recommend joining VCS to access additional resources and materials that enhance your understanding of the concepts covered in the program.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Image and Program Highlights */}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="space-y-8">
+              <img 
+                src={winterAnalystProgramImg}
+                alt="VCS Analyst Program"
+                className="rounded-xl shadow-2xl w-full object-cover"
+              />
+              
+              {/* Program Highlights */}
+              <motion.div 
+                className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+                  Program Highlights
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3 group">
+                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
+                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                      Weekly deep dives into venture capital fundamentals
+                    </span>
+                  </div>
+                  <div className="flex items-start space-x-3 group">
+                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
+                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                      Interactive learning sessions with real-world applications
+                    </span>
+                  </div>
+                  <div className="flex items-start space-x-3 group">
+                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
+                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                      Practical case studies from the venture capital industry
+                    </span>
+                  </div>
+                  <div className="flex items-start space-x-3 group">
+                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
+                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                      Hands-on experience with deal sourcing and due diligence
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 export default VCSWebsite;
