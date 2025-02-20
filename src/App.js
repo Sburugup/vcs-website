@@ -28,6 +28,13 @@ import caseStudiesEventImg from './VCSCaseStudies.png'
 import membershipImg from './VCSMembership.png'
 import winterAnalystProgramImg from './VCSWinterAnalystProgram.png'
 import boardImg from './VCSBoard.png'
+import miniAIFImg from './VCSMiniAIF.jpeg'
+import vanCleveSpeakerEventImg from './VCSVanCleveSpeakerEvent.png'
+import bankTechVenturesSpeakerEventImg from './bankTech.png'
+import cbInsightsSpeakerEventImg from './AmritPanjabi.png'
+import wilsonSonsiniSpeakerEventImg from './VCSWilsonSonsini.png'
+import speedDatingImg from './VCSMemberSocialEvent.png'
+import logoDarkBackdrop from './VCSLogoDarkBackdrop.png'
 
 
 const VCSWebsite = () => {
@@ -532,7 +539,7 @@ const Navigation = ({ currentPage, setPage }) => {
                     className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
                     whileHover={{ x: 5 }}
                   >
-                    AnalystProgram
+                    Analyst Program
                   </motion.button>
                 </motion.div>
               )}
@@ -644,20 +651,18 @@ const EventsPage = () => {
     { date: new Date(2024, 10, 18), time: '6:30 PM - 7:30 PM', location: "SBI 5200", title: "Speciality Masters Program Information Session", description: "We are teaming up with the Math and Finance Club to bring you the Speciality Masters Program information session!", image: mastersEventImg},
     { date: new Date(2024, 10, 21), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: himanshuSpeakerEventImg},
     { date: new Date(2024, 10, 26), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: caseStudiesEventImg},
-    { date: new Date(2025, 0, 13), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Research and Investment Memos", description: "Join us for our first week of our 'Analyst Program' where you'll learn the basics of market research and how to create an effective investment memo.", image: ''},
-    { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: ''},
-    { date: new Date(2025, 0, 15), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Grant Van Cleve", description: "Managing Partner @Hangar 75 Ventures", image: ''},
-    { date: new Date(2025, 0, 20), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Sourcing and Due Dilligence", description: "Join us for our second week of our 'Analyst Program'!", image: ''},
-    { date: new Date(2025, 0, 22), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Bank Tech Ventures Panel", description: "Carry Ransom and Katie Quelling", image: ''},
-    { date: new Date(2025, 0, 27), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Product-Market Fit", description: "", image: ''},
-    { date: new Date(2025, 0, 29), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Amrit Panjabi", description: "CB Insights and Alumni Ventures", image: ''},
-    { date: new Date(2025, 1, 5), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Ken Funahashi", description: "Wilson Sonsini", image: ''},
-    { date: new Date(2025, 1, 10), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: KPI's and Unit Economics", description: "", image: ''},
-    { date: new Date(2025, 1, 12), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker", description: "Stay tuned to find out about our guest speaker!", image: ''},
-    { date: new Date(2025, 1, 17), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Sizing and Valuation", description: "", image: ''},
-    { date: new Date(2025, 1, 19), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker", description: "Stay tuned to find out about our guest speaker!", image: ''},
-    { date: new Date(2025, 1, 24), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Term Sheets and Financing", description: "", image: ''},
-    { date: new Date(2025, 2, 3), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: VC Exits and Fund Operations", description: "", image: ''},
+    { date: new Date(2025, 0, 13), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Research and Investment Memos", description: "Join us for our first week of our 'Analyst Program' where you'll learn the basics of market research and how to create an effective investment memo.", image: winterAnalystProgramImg},
+    { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: miniAIFImg},
+    { date: new Date(2025, 0, 15), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Grant Van Cleve", description: "Managing Partner @Hangar 75 Ventures", image: vanCleveSpeakerEventImg},
+    { date: new Date(2025, 0, 20), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Sourcing and Due Dilligence", description: "Join us for our second week of our 'Analyst Program'!", image: winterAnalystProgramImg},
+    { date: new Date(2025, 0, 22), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Bank Tech Ventures Panel", description: "Carry Ransom and Katie Quelling", image: bankTechVenturesSpeakerEventImg},
+    { date: new Date(2025, 0, 27), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Product-Market Fit", description: "", image: winterAnalystProgramImg},
+    { date: new Date(2025, 0, 29), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Amrit Panjabi", description: "CB Insights and Alumni Ventures", image: cbInsightsSpeakerEventImg},
+    { date: new Date(2025, 1, 10), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: KPI's and Unit Economics", description: "", image: winterAnalystProgramImg},
+    { date: new Date(2025, 1, 12), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Member Social", description: "Speed Dating", image: speedDatingImg},
+    { date: new Date(2025, 1, 19), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Sizing and Valuation", description: "", image: winterAnalystProgramImg},
+    { date: new Date(2025, 1, 24), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Term Sheets and Financing", description: "", image: winterAnalystProgramImg},
+    { date: new Date(2025, 2, 3), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: VC Exits and Fund Operations", description: "", image: winterAnalystProgramImg},
 
   ];
 
@@ -765,20 +770,20 @@ const EventModal = ({ event, onClose }) => (
       onClick={e => e.stopPropagation()}
     >
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/2">
+        <div className="md:w-1/3 flex items-center">
           <img 
-            src={event.image} 
+            src={event.image}
             alt={event.title}
-            className="w-full h-64 object-cover rounded-lg mb-4"
+            className="w-full object-contain h-auto max-h-64 rounded-lg"
           />
         </div>
-        <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold mb-4 text-yellow-400">{event.title}</h2>
+        <div className="md:w-2/3">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400 break-words">{event.title}</h2>
           <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
           <p className="text-xl mb-4">Time: {event.time}</p>
           <p className="text-xl mb-4">Location: {event.location}</p>
           <p className="text-lg">{event.description}</p>
-          <button 
+          <button
             onClick={onClose}
             className="mt-6 bg-yellow-400 text-purple-900 px-4 py-2 rounded-full font-bold hover:bg-white transition duration-300"
           >
@@ -1018,7 +1023,6 @@ const Interns = () => {
 const TeamPage = () => (
   <div className="min-h-screen bg-purple-900 text-white py-20 px-4">
     <div className="text-center mb-2">
-      <StyledTitle>Our Team</StyledTitle>
     </div>
     <ExecTeam />
     <Interns />
@@ -1028,7 +1032,7 @@ const TeamPage = () => (
 const MembershipPage = () => {
   const membershipBenefits = [
     "Access to our weekly newsletter featuring exclusive events and opportunities",
-    "Personalized mentorship opportunities",
+    "Personalized mentorship opportunities with experienced professionals",
     "Access to exclusive workshops with industry guest speakers and supplementary materials",
     "Regular updates on internship and fellowship opportunities in venture capital",
     "Complimentary VCS merchandise and professional headshot photography sessions",
