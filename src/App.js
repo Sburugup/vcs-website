@@ -32,9 +32,7 @@ import miniAIFImg from './VCSMiniAIF.jpeg'
 import vanCleveSpeakerEventImg from './VCSVanCleveSpeakerEvent.png'
 import bankTechVenturesSpeakerEventImg from './bankTech.png'
 import cbInsightsSpeakerEventImg from './AmritPanjabi.png'
-import wilsonSonsiniSpeakerEventImg from './VCSWilsonSonsini.png'
 import speedDatingImg from './VCSMemberSocialEvent.png'
-import logoDarkBackdrop from './VCSLogoDarkBackdrop.png'
 
 
 const VCSWebsite = () => {
