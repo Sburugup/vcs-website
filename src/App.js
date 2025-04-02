@@ -33,6 +33,7 @@ import vanCleveSpeakerEventImg from './VCSVanCleveSpeakerEvent.png'
 import bankTechVenturesSpeakerEventImg from './bankTech.png'
 import cbInsightsSpeakerEventImg from './AmritPanjabi.png'
 import speedDatingImg from './VCSMemberSocialEvent.png'
+import springAnalystProgramImg from './SpringAnalystProgram.png'
 
 
 const VCSWebsite = () => {
@@ -1158,6 +1159,19 @@ const AnalystProgramPage = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
               Analyst Program
             </h1>
+            <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto mb-8">
+              Gain the skills, knowledge, and connections to excel in venture capital
+            </p>
+            <motion.a
+              href="https://forms.gle/5J8XheRQuhNiCqJt9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Apply Now
+            </motion.a>
           </motion.div>
         </div>
 
@@ -1180,6 +1194,9 @@ const AnalystProgramPage = () => {
                 </p>
                 <p>
                   Our program is designed not only to prepare members for competitive VC roles but also to sharpen their strategic thinking and analytical skills. By the end of the program, participants emerge with the confidence and expertise needed to navigate the dynamic world of venture capital.
+                </p>
+                <p>
+                  For student founders and aspiring investors, the massive information asymmetry between startups and VCs can make securing funding or breaking into venture capital seem impossible. Our Analyst Program demystifies the venture capital process, breaking down term sheets, valuation strategies, and investor decision-making so you can approach fundraising with confidence—whether you're a student entrepreneur building your first startup or a future investor looking to back the next big idea.
                 </p>
                 <p className="font-medium text-yellow-300">
                   Stay tuned for more updates as we dive into the core of venture capital, one topic at a time.
@@ -1209,7 +1226,7 @@ const AnalystProgramPage = () => {
           >
             <div className="space-y-8">
               <img 
-                src={winterAnalystProgramImg}
+                src={springAnalystProgramImg}
                 alt="VCS Analyst Program"
                 className="rounded-xl shadow-2xl w-full object-cover"
               />
@@ -1222,31 +1239,31 @@ const AnalystProgramPage = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <h2 className="text-3xl font-bold mb-6 text-yellow-400">
-                  Program Highlights
+                  At the end of the program you can:
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3 group">
                     <span className="text-yellow-400 text-2xl mt-1">✦</span>
                     <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
-                      Weekly deep dives into venture capital fundamentals
+                      Work on a hands-on project with a VC/Startup based in socal
                     </span>
                   </div>
                   <div className="flex items-start space-x-3 group">
                     <span className="text-yellow-400 text-2xl mt-1">✦</span>
                     <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
-                      Interactive learning sessions with real-world applications
+                      Stay on the team of VCS as an analyst and continue to work on projects every quarter following completion
                     </span>
                   </div>
                   <div className="flex items-start space-x-3 group">
                     <span className="text-yellow-400 text-2xl mt-1">✦</span>
                     <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
-                      Practical case studies from the venture capital industry
+                      Get priority for board positions
                     </span>
                   </div>
                   <div className="flex items-start space-x-3 group">
                     <span className="text-yellow-400 text-2xl mt-1">✦</span>
                     <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
-                      Hands-on experience with deal sourcing and due diligence
+                      Network and make meaningful connections with industry professionals
                     </span>
                   </div>
                 </div>
