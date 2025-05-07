@@ -481,19 +481,18 @@ const WhatWeDoPage = React.forwardRef((props, ref) => (
 // New Where We Go Section
 const WhereWeGoPage = React.forwardRef((props, ref) => {
   const companyLogos = [
-    // Replace these with your actual imported logo variables
-    { logo: fuelVentures },  // Using vcsLogo as a placeholder - replace with your actual logos
-    { logo: halogen }, 
-    { logo: icertis },
-    { logo: mitratech },
-    { logo: microsoft },
-    { logo: profitRecovery },
-    { logo: sidebarSummit },
-    { logo: tcaVentures },
-    { logo: techmojo },
-    { logo: trcRetail },
-    { logo: unitedHealthGrp },
-    { logo: redwood }
+    { logo: fuelVentures, link: 'https://www.fuel.ventures/'},
+    { logo: halogen, link: 'https://halogenvc.com/'}, 
+    { logo: icertis, link: 'https://www.icertis.com/'},
+    { logo: mitratech, link: 'https://mitratech.com/'},
+    { logo: microsoft, link: 'https://www.microsoft.com/en-us/'},
+    { logo: profitRecovery, link: 'https://prpllc.com/'},
+    { logo: sidebarSummit, link: 'https://www.sidebarsummit.com/'},
+    { logo: tcaVentures, link: 'https://tcaventuregroup.com/'},
+    { logo: techmojo, link: 'https://www.techmojo.com/'},
+    { logo: trcRetail, link: 'https://trcretail.com/'},
+    { logo: unitedHealthGrp, link: 'https://www.unitedhealthgroup.com/'},
+    { logo: redwood, link: 'https://www.redwoodcollective.net/'}
   ];
 
   return (
@@ -510,8 +509,11 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
             {companyLogos.map((company, index) => (
-              <motion.div
+              <motion.a
                 key={index}
+                href={company.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white bg-opacity-10 rounded-lg p-4 flex items-center justify-center h-32"
                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
                 initial={{ opacity: 0, y: 20 }}
@@ -523,7 +525,7 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
                   alt="Company logo" 
                   className="max-h-24 max-w-full object-contain" 
                 />
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
