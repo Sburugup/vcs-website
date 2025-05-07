@@ -34,13 +34,25 @@ import bankTechVenturesSpeakerEventImg from './bankTech.png'
 import cbInsightsSpeakerEventImg from './AmritPanjabi.png'
 import speedDatingImg from './VCSMemberSocialEvent.png'
 import springAnalystProgramImg from './SpringAnalystProgram.png'
-
+import fuelVentures from './fuelVentures.png'
+import halogen from './halogen.png'
+import icertis from './icertis.png'
+import mitratech from './mitratech.png'
+import microsoft from './microsoft.png'
+import profitRecovery from './profitRecoveryPartners.png'
+import sidebarSummit from './sidebarSummit.jpeg'
+import tcaVentures from './TCAVenture.jpeg'
+import techmojo from './techmojo.jpeg'
+import trcRetail from './trcRetail.png'
+import unitedHealthGrp from './unitedHealth.png'
+import redwood from './redwoodCollective.png'
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const whoWeAreRef = useRef(null);
   const whatWeDoRef = useRef(null);
+  const whereWeGoRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -66,12 +78,20 @@ const VCSWebsite = () => {
     whatWeDoRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToWhereWeGo = () => {
+    whereWeGoRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative w-full bg-black text-white overflow-x-hidden">
       <AnimatedBackground cursorPosition={cursorPosition} />
       <div className="relative z-10 w-full">
         {currentPage !== 'intro' && (
-          <Navigation currentPage={currentPage} setPage={setCurrentPage} />
+          <Navigation 
+            currentPage={currentPage} 
+            setPage={setCurrentPage} 
+            scrollToWhereWeGo={scrollToWhereWeGo}
+          />
         )}
         <AnimatePresence mode="wait">
           {currentPage === 'intro' ? (
@@ -85,7 +105,16 @@ const VCSWebsite = () => {
               transition={{ duration: 0.3 }}
               className="w-full"
             >
-              {renderPage(currentPage, setCurrentPage, scrollToWhoWeAre, scrollToWhatWeDo, whoWeAreRef, whatWeDoRef)}
+              {renderPage(
+                currentPage, 
+                setCurrentPage, 
+                scrollToWhoWeAre, 
+                scrollToWhatWeDo, 
+                scrollToWhereWeGo,
+                whoWeAreRef, 
+                whatWeDoRef,
+                whereWeGoRef
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -309,7 +338,7 @@ const AnimatedBackground = ({ cursorPosition }) => {
   );
 };
 
-const HomePage = ({ setPage, scrollToWhoWeAre, scrollToWhatWeDo, whoWeAreRef, whatWeDoRef }) => {
+const HomePage = ({ setPage, scrollToWhoWeAre, scrollToWhatWeDo, scrollToWhereWeGo, whoWeAreRef, whatWeDoRef, whereWeGoRef }) => {
   const [contentRect, setContentRect] = useState({ top: 0, left: 0, width: 0, height: 0 });
   const contentRef = useRef(null);
 
@@ -344,12 +373,14 @@ const HomePage = ({ setPage, scrollToWhoWeAre, scrollToWhatWeDo, whoWeAreRef, wh
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
             <InteractiveButton label="Who We Are" onClick={scrollToWhoWeAre} />
             <InteractiveButton label="What We Do" onClick={scrollToWhatWeDo} />
+            <InteractiveButton label="Where We Go" onClick={scrollToWhereWeGo} />
             <InteractiveButton label="Upcoming Events" onClick={() => setPage('events')} />
           </div>
         </div>
       </div>
       <WhoWeArePage ref={whoWeAreRef} />
       <WhatWeDoPage ref={whatWeDoRef} />
+      <WhereWeGoPage ref={whereWeGoRef} />
     </>
   );
 };
@@ -446,6 +477,61 @@ const WhatWeDoPage = React.forwardRef((props, ref) => (
   </div>
 ));
 
+
+// New Where We Go Section
+const WhereWeGoPage = React.forwardRef((props, ref) => {
+  const companyLogos = [
+    // Replace these with your actual imported logo variables
+    { logo: fuelVentures },  // Using vcsLogo as a placeholder - replace with your actual logos
+    { logo: halogen }, 
+    { logo: icertis },
+    { logo: mitratech },
+    { logo: microsoft },
+    { logo: profitRecovery },
+    { logo: sidebarSummit },
+    { logo: tcaVentures },
+    { logo: techmojo },
+    { logo: trcRetail },
+    { logo: unitedHealthGrp },
+    { logo: redwood }
+  ];
+
+  return (
+    <div ref={ref} className="min-h-screen bg-purple-900 text-white py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <StyledTitle>Where We Go</StyledTitle>
+        </div>
+        <div className="mb-12">
+          <StyledSubheading>Our Alumni Success Stories</StyledSubheading>
+          <p className="text-xl mt-4 mb-12">
+            Our members have gone on to successful careers at top venture capital firms, startups, and technology companies.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
+            {companyLogos.map((company, index) => (
+              <motion.div
+                key={index}
+                className="bg-white bg-opacity-10 rounded-lg p-4 flex items-center justify-center h-32"
+                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <img 
+                  src={company.logo} 
+                  alt="Company logo" 
+                  className="max-h-24 max-w-full object-contain" 
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+    </div>
+  </div>
+  )
+});
+
 const InteractiveButton = ({ label, onClick }) => (
   <motion.button
     onClick={onClick}
@@ -457,7 +543,7 @@ const InteractiveButton = ({ label, onClick }) => (
   </motion.button>
 );
 
-const Navigation = ({ currentPage, setPage }) => {
+const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
   const [showEmail, setShowEmail] = useState(false);
   const [showJoinDropdown, setShowJoinDropdown] = useState(false);
 
@@ -505,6 +591,16 @@ const Navigation = ({ currentPage, setPage }) => {
               {page.charAt(0).toUpperCase() + page.slice(1)}
             </motion.button>
           ))}
+
+          {/* Where We Go button */}
+          <motion.button
+            onClick={scrollToWhereWeGo}
+            className="px-3 py-1 rounded-full text-sm font-bold bg-purple-800 text-white"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Where We Go
+          </motion.button>
 
           {/* Join Dropdown */}
           <div className="relative join-dropdown">
@@ -616,10 +712,18 @@ const AnimatedCursor = ({ cursorPosition }) => {
 };
 
 
-const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, whoWeAreRef, whatWeDoRef) => {
+const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, scrollToWhereWeGo, whoWeAreRef, whatWeDoRef, whereWeGoRef) => {
   switch (currentPage) {
     case 'home':
-      return <HomePage setPage={setPage} scrollToWhoWeAre={scrollToWhoWeAre} scrollToWhatWeDo={scrollToWhatWeDo} whoWeAreRef={whoWeAreRef} whatWeDoRef={whatWeDoRef} />;
+      return <HomePage 
+        setPage={setPage} 
+        scrollToWhoWeAre={scrollToWhoWeAre} 
+        scrollToWhatWeDo={scrollToWhatWeDo} 
+        scrollToWhereWeGo={scrollToWhereWeGo}
+        whoWeAreRef={whoWeAreRef} 
+        whatWeDoRef={whatWeDoRef} 
+        whereWeGoRef={whereWeGoRef} 
+      />;
     case 'events':
       return <EventsPage/>;
     case 'partnerships':
@@ -631,7 +735,15 @@ const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, wh
     case 'analystProgram':
       return <AnalystProgramPage/>;
     default:
-      return <HomePage setPage={setPage} scrollToWhoWeAre={scrollToWhoWeAre} scrollToWhatWeDo={scrollToWhatWeDo} whoWeAreRef={whoWeAreRef} whatWeDoRef={whatWeDoRef} />;
+      return <HomePage 
+        setPage={setPage} 
+        scrollToWhoWeAre={scrollToWhoWeAre} 
+        scrollToWhatWeDo={scrollToWhatWeDo}
+        scrollToWhereWeGo={scrollToWhereWeGo}
+        whoWeAreRef={whoWeAreRef} 
+        whatWeDoRef={whatWeDoRef}
+        whereWeGoRef={whereWeGoRef}
+      />;
   }
 };
 
