@@ -4,16 +4,16 @@ import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import vcsLogo from './VCSLogo.jpeg';
 
 {/* Board Members */} 
-import mihikaImg from './mihika.png';
-import divijaImg from './divija.png';
-import christianImg from './christian.png';
-import sherylImg from './sheryl.png'
-import ritikaImg from './ritika.png';
-import sudaayImg from './sudaay.png';
-import hussainImg from './hussain.JPG';
-import ayaanImg from './ayaan.JPG';
-import meghanaImg from './meghana.JPG';
-import mattImg from './matt.JPG';
+import mihikaImg from './board/mihika.png';
+import divijaImg from './board/divija.png';
+import christianImg from './board/christian.png';
+import sherylImg from './board/sheryl.png'
+import ritikaImg from './board/ritika.png';
+import sudaayImg from './board/sudaay.png';
+import hussainImg from './board/hussain.JPG';
+import ayaanImg from './board/ayaan.JPG';
+import meghanaImg from './board/meghana.JPG';
+import mattImg from './board/matt.JPG';
 import kyleImg from './board/kyle.JPG';
 
 {/* Interns */}
