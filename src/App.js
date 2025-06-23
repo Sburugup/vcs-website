@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 
-{/* Board Members */} 
+//Board Members
 import mihikaImg from './assets/board/mihika.png';
 import divijaImg from './assets/board/divija.png';
 import christianImg from './assets/board/christian.png';
@@ -15,12 +15,12 @@ import meghanaImg from './assets/board/meghana.png';
 import mattImg from './assets/board/matt.png';
 import kyleImg from './assets/board/kyle.png';
 
-{/* Interns */}
+//Interns
 import roshanImg from './assets/interns/roshan.png';
 import bareeraImg from './assets/interns/bareera.png';
 import bhavyaImg from './assets/interns/bhavya.png';
 
-{/* Companies */}
+//Companies
 import fuelVentures from './assets/membercompanies/fuelVentures.png'
 import halogen from './assets/membercompanies/halogen.png'
 import icertis from './assets/membercompanies/icertis.png'
@@ -33,9 +33,9 @@ import redwoodCollective from './assets/membercompanies/redwoodCollective.png'
 import tcaVentures from './assets/membercompanies/tcaVenture.png'
 import techmojo from './assets/membercompanies/techmojo.png'
 
-{/*Event imports for calendar*/}
+//Event imports for calendar
 
-{/*Speaker events*/}
+// Speaker events
 import nikhilSpeaker from './assets/speakers/nikhil.png'
 import felipeSpeaker from './assets/speakers/felipe.png'
 import vanCleveSpeaker from './assets/speakers/vanCleve.png'
@@ -43,7 +43,7 @@ import amritSpeaker from './assets/speakers/amritPanjabi.png'
 import himanshuSpeaker from './assets/speakers/himanshu.png'
 import bankTechSpeaker from './assets/speakers/bankTech.png'
 
-{/*VCS events*/}
+// VCS events
 import boardIntroEvent from './assets/events/boardIntro.png'
 import qualVsQuantEvent from './assets/events/qualVsQuant.png'
 import whatIsVcEvent from './assets/events/whatIsVc.png' 
@@ -52,7 +52,7 @@ import caseStudiesEvent from './assets/events/caseStudies.png'
 import speedDateEvent from './assets/events/speedDate.png'
 import memberSocialEvent from './assets/events/memberSocial.png'
 
-{/*Other images*/}
+// Speaker Events
 import sidebarSummit from './assets/otherimgs/sidebarSummit.png'
 import boardImg from './assets/otherimgs/vcsBoard.png'
 import membershipImg from './assets/otherimgs/vcsMembership.png'
