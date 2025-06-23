@@ -10,16 +10,16 @@ import christianImg from './board/christian.png';
 import sherylImg from './board/sheryl.png'
 import ritikaImg from './board/ritika.png';
 import sudaayImg from './board/sudaay.png';
-import hussainImg from './board/hussain.JPG';
-import ayaanImg from './board/ayaan.JPG';
-import meghanaImg from './board/meghana.JPG';
-import mattImg from './board/matt.JPG';
-import kyleImg from './board/kyle.JPG';
+import hussainImg from './board/hussain.png';
+import ayaanImg from './board/ayaan.png';
+import meghanaImg from './board/meghana.png';
+import mattImg from './board/matt.png';
+import kyleImg from './board/kyle.png';
 
 {/* Interns */}
 import roshanImg from './interns/roshan.png';
 import bareeraImg from './interns/bareera.png';
-import bhavyaImg from './interns/bhavya.JPEG';
+import bhavyaImg from './interns/bhavya.png';
 
 {/* Companies */}
 import fuelVentures from './interns/fuelVentures.png'
@@ -27,14 +27,14 @@ import halogen from './interns/halogen.png'
 import icertis from './interns/icertis.png'
 import mitratech from './interns/mitratech.png'
 import microsoft from './interns/microsoft.png'
-import profitRecovery from './interns/profitRecoveryPartners.png'
+import profitRecoveryPartners from './interns/profitRecoveryPartners.png'
 import trcRetail from './interns/trcRetail.png'
-import unitedHealthGroup from './interns/unitedHealth.png'
+import unitedHealthGroup from './interns/unitedHealthGroup.png'
 import redwoodCollective from './interns/redwoodCollective.png'
-import tcaVentures from './interns/TCAVenture.jpeg'
-import techmojo from './interns/techmojo.jpeg'
+import tcaVentures from './interns/tcaVenture.png'
+import techmojo from './interns/techmojo.png'
 
-
+{/*Event imports for Calendar*/}
 import sidebarSummit from './sidebarSummit.jpeg'
 import boardIntroImg from './VCSBoardIntro.png'
 import nikhilSpeakerEventImg from './VCSNikhilSpeakerEvent.png'
@@ -496,7 +496,7 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
     { logo: icertis, link: 'https://www.icertis.com/'},
     { logo: mitratech, link: 'https://mitratech.com/'},
     { logo: microsoft, link: 'https://www.microsoft.com/en-us/'},
-    { logo: profitRecovery, link: 'https://prpllc.com/'},
+    { logo: profitRecoveryPartners, link: 'https://prpllc.com/'},
     { logo: sidebarSummit, link: 'https://www.sidebarsummit.com/'},
     { logo: tcaVentures, link: 'https://tcaventuregroup.com/'},
     { logo: techmojo, link: 'https://www.techmojo.com/'},
