@@ -17,9 +17,9 @@ import mattImg from './board/matt.JPG';
 import kyleImg from './board/kyle.JPG';
 
 {/* Interns */}
-import roshanImg from './roshan.png';
-import bareeraImg from './bareera.png';
-import bhavyaImg from './bhavya.JPEG';
+import roshanImg from './interns/roshan.png';
+import bareeraImg from './interns/bareera.png';
+import bhavyaImg from './interns/bhavya.JPEG';
 
 {/* Companies */}
 import boardIntroImg from './VCSBoardIntro.png'
