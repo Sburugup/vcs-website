@@ -22,6 +22,19 @@ import bareeraImg from './interns/bareera.png';
 import bhavyaImg from './interns/bhavya.JPEG';
 
 {/* Companies */}
+import fuelVentures from './fuelVentures.png'
+import halogen from './halogen.png'
+import icertis from './icertis.png'
+import mitratech from './mitratech.png'
+import microsoft from './microsoft.png'
+import profitRecovery from './profitRecoveryPartners.png'
+import sidebarSummit from './sidebarSummit.jpeg'
+import tcaVentures from './TCAVenture.jpeg'
+import techmojo from './techmojo.jpeg'
+import trcRetail from './trcRetail.png'
+import unitedHealthGroup from './unitedHealth.png'
+import redwoodCollective from './redwoodCollective.png'
+
 import boardIntroImg from './VCSBoardIntro.png'
 import nikhilSpeakerEventImg from './VCSNikhilSpeakerEvent.png'
 import qualVsQuantImg from './VCSQualvsQuant.png'
@@ -40,18 +53,8 @@ import bankTechVenturesSpeakerEventImg from './bankTech.png'
 import cbInsightsSpeakerEventImg from './AmritPanjabi.png'
 import speedDatingImg from './VCSMemberSocialEvent.png'
 import springAnalystProgramImg from './SpringAnalystProgram.png'
-import fuelVentures from './fuelVentures.png'
-import halogen from './halogen.png'
-import icertis from './icertis.png'
-import mitratech from './mitratech.png'
-import microsoft from './microsoft.png'
-import profitRecovery from './profitRecoveryPartners.png'
-import sidebarSummit from './sidebarSummit.jpeg'
-import tcaVentures from './TCAVenture.jpeg'
-import techmojo from './techmojo.jpeg'
-import trcRetail from './trcRetail.png'
-import unitedHealthGrp from './unitedHealth.png'
-import redwood from './redwoodCollective.png'
+
+
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
@@ -497,8 +500,8 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
     { logo: tcaVentures, link: 'https://tcaventuregroup.com/'},
     { logo: techmojo, link: 'https://www.techmojo.com/'},
     { logo: trcRetail, link: 'https://trcretail.com/'},
-    { logo: unitedHealthGrp, link: 'https://www.unitedhealthgroup.com/'},
-    { logo: redwood, link: 'https://www.redwoodcollective.net/'}
+    { logo: unitedHealthGroup, link: 'https://www.unitedhealthgroup.com/'},
+    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'}
   ];
 
   return (
