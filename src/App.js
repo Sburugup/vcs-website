@@ -11,7 +11,7 @@ import christianImg from './christian.png';
 import ritikaImg from './ritika.png';
 import sudaayImg from './sudaay.png';
 import mattImg from './matt.JPG';
-import kyleImg from './kyle.JPG';
+import kyleImg from './board/kyle.JPG';
 import sherylImg from './sheryl.png'
 import roshanImg from './roshan.png';
 import bareeraImg from './bareera.png';
