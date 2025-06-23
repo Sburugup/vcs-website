@@ -3,63 +3,63 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 
 {/* Board Members */} 
-import mihikaImg from './board/mihika.png';
-import divijaImg from './board/divija.png';
-import christianImg from './board/christian.png';
-import sherylImg from './board/sheryl.png'
-import ritikaImg from './board/ritika.png';
-import sudaayImg from './board/sudaay.png';
-import hussainImg from './board/hussain.png';
-import ayaanImg from './board/ayaan.png';
-import meghanaImg from './board/meghana.png';
-import mattImg from './board/matt.png';
-import kyleImg from './board/kyle.png';
+import mihikaImg from './assets/board/mihika.png';
+import divijaImg from './assets/board/divija.png';
+import christianImg from './assets/board/christian.png';
+import sherylImg from './assets/board/sheryl.png'
+import ritikaImg from './assets/board/ritika.png';
+import sudaayImg from './assets/board/sudaay.png';
+import hussainImg from './assets/board/hussain.png';
+import ayaanImg from './assets/board/ayaan.png';
+import meghanaImg from './assets/board/meghana.png';
+import mattImg from './assets/board/matt.png';
+import kyleImg from './assets/board/kyle.png';
 
 {/* Interns */}
-import roshanImg from './interns/roshan.png';
-import bareeraImg from './interns/bareera.png';
-import bhavyaImg from './interns/bhavya.png';
+import roshanImg from './assets/interns/roshan.png';
+import bareeraImg from './assets/interns/bareera.png';
+import bhavyaImg from './assets/interns/bhavya.png';
 
 {/* Companies */}
-import fuelVentures from './interns/fuelVentures.png'
-import halogen from './interns/halogen.png'
-import icertis from './interns/icertis.png'
-import mitratech from './interns/mitratech.png'
-import microsoft from './interns/microsoft.png'
-import profitRecoveryPartners from './interns/profitRecoveryPartners.png'
-import trcRetail from './interns/trcRetail.png'
-import unitedHealthGroup from './interns/unitedHealthGroup.png'
-import redwoodCollective from './interns/redwoodCollective.png'
-import tcaVentures from './interns/tcaVenture.png'
-import techmojo from './interns/techmojo.png'
+import fuelVentures from './assets/membercompanies/fuelVentures.png'
+import halogen from './assets/membercompanies/halogen.png'
+import icertis from './assets/membercompanies/icertis.png'
+import mitratech from './assets/membercompanies/mitratech.png'
+import microsoft from './assets/membercompanies/microsoft.png'
+import profitRecoveryPartners from './assets/membercompanies/profitRecoveryPartners.png'
+import trcRetail from './assets/membercompanies/trcRetail.png'
+import unitedHealthGroup from './assets/membercompanies/unitedHealthGroup.png'
+import redwoodCollective from './assets/membercompanies/redwoodCollective.png'
+import tcaVentures from './assets/membercompanies/tcaVenture.png'
+import techmojo from './assets/membercompanies/techmojo.png'
 
 {/*Event imports for calendar*/}
 
 {/*Speaker events*/}
-import nikhilSpeaker from './speakers/nikhil.png'
-import felipeSpeaker from './speakers/felipe.png'
-import vanCleveSpeaker from './speakers/vanCleve.png'
-import amritSpeaker from './speakers/amritPanjabi.png'
-import himanshuSpeaker from './speakers/himanshu.png'
-import bankTechSpeaker from './speakers/bankTech.png'
+import nikhilSpeaker from './assets/speakers/nikhil.png'
+import felipeSpeaker from './assets/speakers/felipe.png'
+import vanCleveSpeaker from './assets/speakers/vanCleve.png'
+import amritSpeaker from './assets/speakers/amritPanjabi.png'
+import himanshuSpeaker from './assets/speakers/himanshu.png'
+import bankTechSpeaker from './assets/speakers/bankTech.png'
 
 {/*VCS events*/}
-import boardIntroEvent from './events/boardIntro.png'
-import qualVsQuantEvent from './events/qualVsQuant.png'
-import whatIsVcEvent from './events/whatIsVc.png' 
-import vcsMfcMastersEvent from './events/vcsMfcMasters.png'
-import caseStudiesEvent from './events/caseStudies.png'
-import speedDateEvent from './events/speedDate.png'
-import memberSocialEvent from './events/memberSocial.png'
+import boardIntroEvent from './assets/events/boardIntro.png'
+import qualVsQuantEvent from './assets/events/qualVsQuant.png'
+import whatIsVcEvent from './assets/events/whatIsVc.png' 
+import vcsMfcMastersEvent from './assets/events/vcsMfcMasters.png'
+import caseStudiesEvent from './assets/events/caseStudies.png'
+import speedDateEvent from './assets/events/speedDate.png'
+import memberSocialEvent from './assets/events/memberSocial.png'
 
 {/*Other images*/}
-import sidebarSummit from './otherimgs/sidebarSummit.png'
-import boardImg from './otherimgs/vcsBoard.png'
-import membershipImg from './otherimgs/vcsMembership.png'
-import miniAIFImg from './otherimgs/miniAIF.png'
-import vcsLogo from './otherimgs/vcsLogo.png';
-import winterAnalystProgramImg from './otherimgs/winterAnalystProgram.png'
-import springAnalystProgramImg from './otherimgs/springAnalystProgram.png'
+import sidebarSummit from './assets/otherimgs/sidebarSummit.png'
+import boardImg from './assets/otherimgs/vcsBoard.png'
+import membershipImg from './assets/otherimgs/vcsMembership.png'
+import miniAIF from './assets/otherimgs/miniAIF.png'
+import vcsLogo from './assets/otherimgs/vcsLogo.png';
+import winterAnalystProgramImg from './assets/otherimgs/winterAnalystProgram.png'
+import springAnalystProgramImg from './assets/otherimgs/springAnalystProgram.png'
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
@@ -779,7 +779,7 @@ const EventsPage = () => {
     { date: new Date(2024, 10, 21), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: himanshuSpeaker},
     { date: new Date(2024, 10, 26), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: caseStudiesEvent},
     { date: new Date(2025, 0, 13), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Research and Investment Memos", description: "Join us for our first week of our 'Analyst Program' where you'll learn the basics of market research and how to create an effective investment memo.", image: winterAnalystProgramImg},
-    { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: miniAIFImg},
+    { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: miniAIF},
     { date: new Date(2025, 0, 15), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Grant Van Cleve", description: "Managing Partner @Hangar 75 Ventures", image: vanCleveSpeaker},
     { date: new Date(2025, 0, 20), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Sourcing and Due Dilligence", description: "Join us for our second week of our 'Analyst Program'!", image: winterAnalystProgramImg},
     { date: new Date(2025, 0, 22), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Bank Tech Ventures Panel", description: "Carry Ransom and Katie Quelling", image: bankTechSpeaker},
