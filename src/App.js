@@ -22,19 +22,20 @@ import bareeraImg from './interns/bareera.png';
 import bhavyaImg from './interns/bhavya.JPEG';
 
 {/* Companies */}
-import fuelVentures from './fuelVentures.png'
-import halogen from './halogen.png'
-import icertis from './icertis.png'
-import mitratech from './mitratech.png'
-import microsoft from './microsoft.png'
-import profitRecovery from './profitRecoveryPartners.png'
-import sidebarSummit from './sidebarSummit.jpeg'
-import tcaVentures from './TCAVenture.jpeg'
-import techmojo from './techmojo.jpeg'
-import trcRetail from './trcRetail.png'
-import unitedHealthGroup from './unitedHealth.png'
-import redwoodCollective from './redwoodCollective.png'
+import fuelVentures from './interns/fuelVentures.png'
+import halogen from './interns/halogen.png'
+import icertis from './interns/icertis.png'
+import mitratech from './interns/mitratech.png'
+import microsoft from './interns/microsoft.png'
+import profitRecovery from './interns/profitRecoveryPartners.png'
+import trcRetail from './interns/trcRetail.png'
+import unitedHealthGroup from './interns/unitedHealth.png'
+import redwoodCollective from './interns/redwoodCollective.png'
+import tcaVentures from './interns/TCAVenture.jpeg'
+import techmojo from './interns/techmojo.jpeg'
 
+
+import sidebarSummit from './sidebarSummit.jpeg'
 import boardIntroImg from './VCSBoardIntro.png'
 import nikhilSpeakerEventImg from './VCSNikhilSpeakerEvent.png'
 import qualVsQuantImg from './VCSQualvsQuant.png'
