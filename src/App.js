@@ -2,20 +2,26 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 import vcsLogo from './VCSLogo.jpeg';
+
+{/* Board Members */} 
 import mihikaImg from './mihika.png';
 import divijaImg from './divija.png';
+import christianImg from './christian.png';
+import sherylImg from './sheryl.png'
+import ritikaImg from './ritika.png';
+import sudaayImg from './sudaay.png';
 import hussainImg from './hussain.JPG';
 import ayaanImg from './ayaan.JPG';
 import meghanaImg from './meghana.JPG';
-import christianImg from './christian.png';
-import ritikaImg from './ritika.png';
-import sudaayImg from './sudaay.png';
 import mattImg from './matt.JPG';
 import kyleImg from './board/kyle.JPG';
-import sherylImg from './sheryl.png'
+
+{/* Interns */}
 import roshanImg from './roshan.png';
 import bareeraImg from './bareera.png';
 import bhavyaImg from './bhavya.JPEG';
+
+{/* Companies */}
 import boardIntroImg from './VCSBoardIntro.png'
 import nikhilSpeakerEventImg from './VCSNikhilSpeakerEvent.png'
 import qualVsQuantImg from './VCSQualvsQuant.png'
