@@ -1123,7 +1123,7 @@ const Interns = () => {
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
           >
             <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400" />
             <div className="flex items-center justify-center gap-2">
