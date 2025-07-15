@@ -1105,7 +1105,7 @@ const ExecTeam = () => {
   );
 };
 
-// Look at this later to add motion.div for interns for consistency
+
 const Interns = () => {
   const internMembers = [
     { name: "Roshan Raj", position: "Technology Intern", image: roshanImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
