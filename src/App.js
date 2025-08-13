@@ -4,16 +4,9 @@ import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 
 //Board Members
 import mihikaImg from './assets/board/mihika.png';
-import divijaImg from './assets/board/divija.png';
-import christianImg from './assets/board/christian.png';
-import sherylImg from './assets/board/sheryl.png'
-import ritikaImg from './assets/board/ritika.png';
-import sudaayImg from './assets/board/sudaay.png';
-import hussainImg from './assets/board/hussain.png';
-import ayaanImg from './assets/board/ayaan.png';
-import meghanaImg from './assets/board/meghana.png';
 import mattImg from './assets/board/matt.png';
-import kyleImg from './assets/board/kyle.png';
+import sudaayImg from './assets/board/sudaay.png';
+
 
 //Interns
 import roshanImg from './assets/interns/roshan.png';
@@ -21,17 +14,7 @@ import bareeraImg from './assets/interns/bareera.png';
 import bhavyaImg from './assets/interns/bhavya.png';
 
 //Companies
-import fuelVentures from './assets/membercompanies/fuelVentures.png'
-import halogen from './assets/membercompanies/halogen.png'
-import icertis from './assets/membercompanies/icertis.png'
-import mitratech from './assets/membercompanies/mitratech.png'
 import microsoft from './assets/membercompanies/microsoft.png'
-import profitRecoveryPartners from './assets/membercompanies/profitRecoveryPartners.png'
-import trcRetail from './assets/membercompanies/trcRetail.png'
-import unitedHealthGroup from './assets/membercompanies/unitedHealthGroup.png'
-import redwoodCollective from './assets/membercompanies/redwoodCollective.png'
-import tcaVentures from './assets/membercompanies/tcaVenture.png'
-import techmojo from './assets/membercompanies/techmojo.png'
 
 //Event imports for calendar
 
