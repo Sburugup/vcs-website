@@ -1059,16 +1059,18 @@ const PartnershipsPage = () => {
 const ExecTeam = () => {
   const execMembers = [
     { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'https://www.linkedin.com/in/mihika-guntur/'},
-    { name: 'Divija Mudumbai', position: 'Co-Exec Vice President', image: divijaImg, linkedin: 'https://www.linkedin.com/in/divija-mudumbai'},
-    { name: 'Hussain Mahuvawala', position: 'Co-Exec Vice President', image: hussainImg, linkedin: 'https://www.linkedin.com/in/hm1711/'},
-    { name: 'Ayaan Dhir', position: 'VP of Professional Development', image: ayaanImg, linkedin: 'https://www.linkedin.com/in/ayaandhir/'},
-    { name: 'Meghana Burugupalli', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://www.linkedin.com/in/srimeghana-burugupalli-913725248/'},
-    { name: 'Christian Mccormick', position: 'VP of External Affairs', image: christianImg, linkedin: 'https://www.linkedin.com/in/csmccormick/'},
-    { name: 'Ritika Ramnani', position: 'Co-VP of Marketing', image: ritikaImg, linkedin: 'https://www.linkedin.com/in/ritika-ramnani-02090920b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'},
-    { name: 'Sheryl Gupta', position: 'Co-VP of Marketing', image: sherylImg, linkedin: 'https://www.linkedin.com/in/sheryl-gupta28'},
-    { name: 'Sudaay Chaloo', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sudaaychaloo/'},
-    { name: 'Matt Ayabe', position: 'VP of Engagement', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
-    { name: 'Kyle King', position: 'VP of Finance', image: kyleImg, linkedin: 'https://www.linkedin.com/in/king-kyle/'}
+    { name: 'Matt Ayabe', position: 'Vice President', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
+    { name: 'Sudaay Chaloo', position: 'VP of Finance', image: kyleImg, linkedin: 'https://https://www.linkedin.com/in/sudaaychaloo/'},
+    { name: 'Jason Nguyen', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://https://www.linkedin.com/in/jasonnguyen1331/'}, 
+    { name: 'Yash Patel', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://www.linkedin.com/feed/'}, {/*No linked, no pfp either*/},
+
+    { name: 'Tejasvini Ramesh', position: 'Co-VP of Marketing', image: ritikaImg, linkedin: 'https://www.linkedin.com/in/tejasviniramesh/'},
+    { name: 'Andrew Do', position: 'Co-VP of Marketing', image: sherylImg, linkedin: 'https://www.linkedin.com/in/andrew-do1/'}, {/*No linked*/},
+
+    { name: 'Darshan Golccha', position: 'VP of External Affairs', image: christianImg, linkedin: 'https://www.linkedin.com/in/tecxbro/'},
+    { name: 'Anirudh Mandala', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/anirudhkumarmandala/'}, {/*No pfp*/},
+
+    { name: 'Sanskriti Singh', position: 'VP of Professional Development', image: ayaanImg, linkedin: 'https://www.linkedin.com/in/sanskriti-singh-792a00247/'},
   ];
 
   return (
