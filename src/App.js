@@ -7,11 +7,9 @@ import mihikaImg from './assets/board/mihika.png';
 import mattImg from './assets/board/matt.png';
 import sudaayImg from './assets/board/sudaay.png';
 
-
-//Interns
-import roshanImg from './assets/interns/roshan.png';
-import bareeraImg from './assets/interns/bareera.png';
-import bhavyaImg from './assets/interns/bhavya.png';
+import jasonImg from './assets/board/jason.png';
+import sanskritiImg from './assets/board/sanskriti.png';
+import tejasviniImg from './assets/board/tejasvini.png';
 
 //Companies
 import microsoft from './assets/membercompanies/microsoft.png'
@@ -478,18 +476,18 @@ const WhatWeDoPage = React.forwardRef((props, ref) => (
 // New Where We Go Section
 const WhereWeGoPage = React.forwardRef((props, ref) => {
   const companyLogos = [
-    { logo: fuelVentures, link: 'https://www.fuel.ventures/'},
-    { logo: halogen, link: 'https://halogenvc.com/'}, 
-    { logo: icertis, link: 'https://www.icertis.com/'},
-    { logo: mitratech, link: 'https://mitratech.com/'},
+//    { logo: fuelVentures, link: 'https://www.fuel.ventures/'},
+//    { logo: halogen, link: 'https://halogenvc.com/'}, 
+//    { logo: icertis, link: 'https://www.icertis.com/'},
+//    { logo: mitratech, link: 'https://mitratech.com/'},
     { logo: microsoft, link: 'https://www.microsoft.com/en-us/'},
-    { logo: profitRecoveryPartners, link: 'https://prpllc.com/'},
-    { logo: sidebarSummit, link: 'https://www.sidebarsummit.com/'},
-    { logo: tcaVentures, link: 'https://tcaventuregroup.com/'},
-    { logo: techmojo, link: 'https://www.techmojo.com/'},
-    { logo: trcRetail, link: 'https://trcretail.com/'},
-    { logo: unitedHealthGroup, link: 'https://www.unitedhealthgroup.com/'},
-    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'}
+//    { logo: profitRecoveryPartners, link: 'https://prpllc.com/'},
+//    { logo: sidebarSummit, link: 'https://www.sidebarsummit.com/'},
+//    { logo: tcaVentures, link: 'https://tcaventuregroup.com/'},
+//    { logo: techmojo, link: 'https://www.techmojo.com/'},
+//    { logo: trcRetail, link: 'https://trcretail.com/'},
+//    { logo: unitedHealthGroup, link: 'https://www.unitedhealthgroup.com/'},
+//    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'}
   ];
 
   return (
@@ -1043,23 +1041,23 @@ const ExecTeam = () => {
   const execMembers = [
     { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'https://www.linkedin.com/in/mihika-guntur/'},
     { name: 'Matt Ayabe', position: 'Vice President', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
-    { name: 'Sudaay Chaloo', position: 'VP of Finance', image: kyleImg, linkedin: 'https://https://www.linkedin.com/in/sudaaychaloo/'},
-    { name: 'Jason Nguyen', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://https://www.linkedin.com/in/jasonnguyen1331/'}, 
-    { name: 'Yash Patel', position: 'VP of Technology', image: meghanaImg, linkedin: 'https://www.linkedin.com/feed/'}, {/*No linked, no pfp either*/},
+    { name: 'Sudaay Chaloo', position: 'VP of Finance', image: sudaayImg, linkedin: 'https://https://www.linkedin.com/in/sudaaychaloo/'},
+    { name: 'Jason Nguyen', position: 'VP of Technology', image: sudaayImg, linkedin: 'https://https://www.linkedin.com/in/jasonnguyen1331/'}, 
+    { name: 'Yash Patel', position: 'VP of Technology', image: sudaayImg, linkedin: 'https://www.linkedin.com/feed/'}, //No linked, no pfp either
 
-    { name: 'Tejasvini Ramesh', position: 'Co-VP of Marketing', image: ritikaImg, linkedin: 'https://www.linkedin.com/in/tejasviniramesh/'},
-    { name: 'Andrew Do', position: 'Co-VP of Marketing', image: sherylImg, linkedin: 'https://www.linkedin.com/in/andrew-do1/'}, {/*No linked*/},
+    { name: 'Tejasvini Ramesh', position: 'Co-VP of Marketing', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/tejasviniramesh/'},
+    { name: 'Andrew Do', position: 'Co-VP of Marketing', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/andrew-do1/'}, //No linkedin
 
-    { name: 'Darshan Golccha', position: 'VP of External Affairs', image: christianImg, linkedin: 'https://www.linkedin.com/in/tecxbro/'},
-    { name: 'Anirudh Mandala', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/anirudhkumarmandala/'}, {/*No pfp*/},
+    { name: 'Darshan Golccha', position: 'VP of External Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/tecxbro/'},
+    { name: 'Anirudh Mandala', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/anirudhkumarmandala/'}, //No pfp
 
-    { name: 'Sanskriti Singh', position: 'VP of Professional Development', image: ayaanImg, linkedin: 'https://www.linkedin.com/in/sanskriti-singh-792a00247/'},
+    { name: 'Sanskriti Singh', position: 'VP of Professional Development', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sanskriti-singh-792a00247/'},
   ];
 
   return (
     <div className="container mx-auto pt-8">
       <h2 className="text-4xl font-bold text-center mb-12 text-white">Executive Board</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">V
         {execMembers.map((member, index) => (
           <motion.div 
             key={index} 
@@ -1093,9 +1091,9 @@ const ExecTeam = () => {
 
 const Interns = () => {
   const internMembers = [
-    { name: "Roshan Raj", position: "Technology Intern", image: roshanImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
-    {name: "Bareera Gulraiz", position: "Intern", image: bareeraImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
-    {name: "Bhavya Jain", position: "Professional Development Intern", image: bhavyaImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
+    { name: "Roshan Raj", position: "Technology Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
+    {name: "Bareera Gulraiz", position: "Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
+    {name: "Bhavya Jain", position: "Professional Development Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
   ];
 
   return (
