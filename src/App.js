@@ -1041,7 +1041,7 @@ const ExecTeam = () => {
   const execMembers = [
     { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'https://www.linkedin.com/in/mihika-guntur/'},
     { name: 'Matt Ayabe', position: 'Vice President', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
-    { name: 'Sudaay Chaloo', position: 'VP of Finance', image: sudaayImg, linkedin: 'https://https://www.linkedin.com/in/sudaaychaloo/'},
+    { name: 'Sudaay Chaloo', position: 'VP of Finance', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sudaaychaloo/'},
     { name: 'Jason Nguyen', position: 'VP of Technology', image: sudaayImg, linkedin: 'https://https://www.linkedin.com/in/jasonnguyen1331/'}, 
     { name: 'Yash Patel', position: 'VP of Technology', image: sudaayImg, linkedin: 'https://www.linkedin.com/feed/'}, //No linked, no pfp either
 
@@ -1057,7 +1057,7 @@ const ExecTeam = () => {
   return (
     <div className="container mx-auto pt-8">
       <h2 className="text-4xl font-bold text-center mb-12 text-white">Executive Board</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">V
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {execMembers.map((member, index) => (
           <motion.div 
             key={index} 
