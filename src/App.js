@@ -10,6 +10,7 @@ import sudaayImg from './assets/board/sudaay.png';
 import jasonImg from './assets/board/jason.png';
 import sanskritiImg from './assets/board/sanskriti.png';
 import tejasviniImg from './assets/board/tejasvini.png';
+import yashImg from './assets/board/yash.jpeg';
 
 //Companies
 import microsoft from './assets/membercompanies/microsoft.png'
@@ -1042,16 +1043,16 @@ const ExecTeam = () => {
     { name: 'Mihika Guntur', position: 'President', image: mihikaImg, linkedin: 'https://www.linkedin.com/in/mihika-guntur/'},
     { name: 'Matt Ayabe', position: 'Vice President', image: mattImg, linkedin: 'https://www.linkedin.com/in/mattayabe'},
     { name: 'Sudaay Chaloo', position: 'VP of Finance', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sudaaychaloo/'},
-    { name: 'Jason Nguyen', position: 'VP of Technology', image: sudaayImg, linkedin: 'https://https://www.linkedin.com/in/jasonnguyen1331/'}, 
-    { name: 'Yash Patel', position: 'VP of Technology', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/yash-patel-775aaa22a/'}, //no pfp
+    { name: 'Jason Nguyen', position: 'VP of Technology', image: jasonImg, linkedin: 'https://https://www.linkedin.com/in/jasonnguyen1331/'}, 
+    { name: 'Yash Patel', position: 'VP of Technology', image: yashImg, linkedin: 'https://www.linkedin.com/in/yash-patel-775aaa22a/'}, //no pfp
 
-    { name: 'Tejasvini Ramesh', position: 'Co-VP of Marketing', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/tejasviniramesh/'},
+    { name: 'Tejasvini Ramesh', position: 'Co-VP of Marketing', image: tejasviniImg, linkedin: 'https://www.linkedin.com/in/tejasviniramesh/'},
     { name: 'Andrew Do', position: 'Co-VP of Marketing', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/andrew-do1/'}, //No linkedin
 
     { name: 'Darshan Golccha', position: 'VP of External Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/tecxbro/'},
     { name: 'Anirudh Mandala', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/anirudhkumarmandala/'}, //No pfp
 
-    { name: 'Sanskriti Singh', position: 'VP of Professional Development', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/sanskriti-singh-792a00247/'},
+    { name: 'Sanskriti Singh', position: 'VP of Professional Development', image: sanskritiImg, linkedin: 'https://www.linkedin.com/in/sanskriti-singh-792a00247/'},
   ];
 
   return (
