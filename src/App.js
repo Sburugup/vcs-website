@@ -10,10 +10,14 @@ import sudaayImg from './assets/board/sudaay.png';
 import jasonImg from './assets/board/jason.png';
 import sanskritiImg from './assets/board/sanskriti.png';
 import tejasviniImg from './assets/board/tejasvini.png';
-import yashImg from './assets/board/yash.jpeg';
+import yashImg from './assets/board/yash.png';
 
 //Companies
 import microsoft from './assets/membercompanies/microsoft.png'
+import lvlupventures from './assets/membercompanies/lvlupventures.png'
+import profitrecovery from './assets/membercompanies/profitrecovery.png'
+import tjbrothers from './assets/membercompanies/tjbrothers.png'
+import bombellii from './assets/membercompanies/bombellii.png'
 
 //Event imports for calendar
 
