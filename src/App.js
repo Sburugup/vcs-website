@@ -758,7 +758,7 @@ const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, sc
   }
 };
 
-
+//The yellow events that go onto the separate events calendar page
 const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const currentMonthRef = useRef(null);
@@ -836,6 +836,7 @@ const EventsPage = () => {
   );
 };
 
+// The actual calendar page
 const Calendar = ({ monthData, events, onEventClick }) => {
   const daysInMonth = new Date(monthData.year, monthData.month + 1, 0).getDate();
   const firstDayOfMonth = new Date(monthData.year, monthData.month, 1).getDay();
