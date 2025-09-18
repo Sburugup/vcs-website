@@ -2,6 +2,10 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 
+// Import components
+import Calendar from './components/Calendar';
+import EventModal from './components/EventModal';
+
 //Board Members
 import mihikaImg from './assets/board/mihika.png';
 import mattImg from './assets/board/matt.png';
@@ -836,87 +840,7 @@ const EventsPage = () => {
   );
 };
 
-// The actual calendar page
-const Calendar = ({ monthData, events, onEventClick }) => {
-  const daysInMonth = new Date(monthData.year, monthData.month + 1, 0).getDate();
-  const firstDayOfMonth = new Date(monthData.year, monthData.month, 1).getDay();
-  
-  const days = [...Array(daysInMonth).keys()].map(i => i + 1);
-  const blanks = [...Array(firstDayOfMonth).keys()];
 
-  return (
-    <div className="mb-12">
-      <h2 className="text-3xl font-bold mb-4 text-yellow-400">{monthData.name} {monthData.year}</h2>
-      <div className="grid grid-cols-7 gap-2">
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-          <div key={day} className="text-center font-bold">{day}</div>
-        ))}
-        {blanks.map((_, index) => (
-          <div key={`blank-${index}`} className="h-24 bg-purple-800 rounded-lg"></div>
-        ))}
-        {days.map(day => {
-          const dateEvents = events.filter(event => event.date.getDate() === day);
-          return (
-            <div key={day} className="h-24 bg-purple-800 rounded-lg p-1 overflow-hidden">
-              <div className="text-sm mb-1">{day}</div>
-              {dateEvents.map((event, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-yellow-400 text-purple-900 text-xs p-1 mb-1 rounded cursor-pointer"
-                  whileHover={{ scale: 1.05 }}
-                  onClick={() => onEventClick(event)}
-                >
-                  {event.title}
-                </motion.div>
-              ))}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-const EventModal = ({ event, onClose }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
-    onClick={onClose}
-  >
-    <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 50, opacity: 0 }}
-      className="bg-purple-800 p-8 rounded-lg max-w-4xl w-full"
-      onClick={e => e.stopPropagation()}
-    >
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/3 flex items-center">
-          <img 
-            src={event.image}
-            alt={event.title}
-            className="w-full object-contain h-auto max-h-64 rounded-lg"
-          />
-        </div>
-        <div className="md:w-2/3">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400 break-words">{event.title}</h2>
-          <p className="text-xl mb-4">Date: {event.date.toDateString()}</p>
-          <p className="text-xl mb-4">Time: {event.time}</p>
-          <p className="text-xl mb-4">Location: {event.location}</p>
-          <p className="text-lg">{event.description}</p>
-          <button
-            onClick={onClose}
-            className="mt-6 bg-yellow-400 text-purple-900 px-4 py-2 rounded-full font-bold hover:bg-white transition duration-300"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  </motion.div>
-);
 
 
 const PartnershipsPage = () => {
