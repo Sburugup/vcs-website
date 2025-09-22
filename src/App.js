@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 
 // Import components
-import Calendar from './components/Calendar';
+import Calendar from './components/calendar';
 import EventModal from './components/EventModal';
 
 //Board Members
