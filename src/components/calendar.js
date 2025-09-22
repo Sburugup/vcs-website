@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const Calendar = ({ monthData, events, onEventClick }) => {

@@ -48,7 +48,7 @@ import speedDateEvent from './assets/events/speedDate.png'
 import memberSocialEvent from './assets/events/memberSocial.png'
 
 // Speaker Events
-import sidebarSummit from './assets/otherimgs/sidebarSummit.png'
+//import sidebarSummit from './assets/otherimgs/sidebarSummit.png'
 import boardImg from './assets/otherimgs/vcsBoard.png'
 import membershipImg from './assets/otherimgs/vcsMembership.png'
 import miniAIF from './assets/otherimgs/miniAIF.png'
