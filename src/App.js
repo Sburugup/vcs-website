@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { DollarSign, InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 
 // Import components
-import Calendar from './components/calendar';
+import Calendar from './components/Calendar';
 import EventModal from './components/EventModal';
 
 //Board Members
@@ -15,9 +15,9 @@ import jasonImg from './assets/board/jason.png';
 import yashImg from './assets/board/yash.png';
 import tejasviniImg from './assets/board/tejasvini.png';
 
-// import andrew from './assets/board/andrew'; no pfp !! yet   
-// import darshan from './assets/board/darshan'; no pfp!! yet
-// import anirudh from './assets/board/anirudh'; NO pfp!! yet
+import andrewImg from './assets/board/andrew.png';  
+import darshanImg from './assets/board/darshan.png';
+import anirudhImg from './assets/board/anirudh.png'; 
 
 import sanskritiImg from './assets/board/sanskriti.png';
 
@@ -27,6 +27,7 @@ import lvlupventures from './assets/membercompanies/lvlupventures.png'
 import profitrecovery from './assets/membercompanies/profitrecovery.png'
 import tjbrothers from './assets/membercompanies/tjbrothers.png'
 import bombellii from './assets/membercompanies/bombellii.png'
+import redwoodCollective from './assets/membercompanies/redwoodcollective.png'
 
 //Event imports for calendar
 
@@ -505,7 +506,7 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
 //    { logo: techmojo, link: 'https://www.techmojo.com/'},
 //    { logo: trcRetail, link: 'https://trcretail.com/'},
 //    { logo: unitedHealthGroup, link: 'https://www.unitedhealthgroup.com/'},
-//    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'}
+    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'}
   ];
 
   return (
@@ -986,9 +987,9 @@ const ExecTeam = () => {
     { name: 'Yash Patel', position: 'VP of Technology', image: yashImg, linkedin: 'https://www.linkedin.com/in/yash-patel-775aaa22a/'}, 
     { name: 'Tejasvini Ramesh', position: 'Co-VP of Marketing', image: tejasviniImg, linkedin: 'https://www.linkedin.com/in/tejasviniramesh/'},
 
-    { name: 'Andrew Do', position: 'Co-VP of Marketing', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/andrew-do1/'}, //No linkedin
-    { name: 'Darshan Golccha', position: 'VP of External Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/tecxbro/'},
-    { name: 'Anirudh Mandala', position: 'VP of Internal Affairs', image: sudaayImg, linkedin: 'https://www.linkedin.com/in/anirudhkumarmandala/'}, //No pfp
+    { name: 'Andrew Do', position: 'Co-VP of Marketing', image: andrewImg, linkedin: 'https://www.linkedin.com/in/andrew-do1/'}, 
+    { name: 'Darshan Golccha', position: 'VP of External Affairs', image: darshanImg, linkedin: 'https://www.linkedin.com/in/tecxbro/'},
+    { name: 'Anirudh Mandala', position: 'VP of Internal Affairs', image: anirudhImg, linkedin: 'https://www.linkedin.com/in/anirudhkumarmandala/'}, 
 
     { name: 'Sanskriti Singh', position: 'VP of Professional Development', image: sanskritiImg, linkedin: 'https://www.linkedin.com/in/sanskriti-singh-792a00247/'},
   ];
@@ -1028,53 +1029,53 @@ const ExecTeam = () => {
 };
 
 
-const Interns = () => {
-  const internMembers = [
-    { name: "Roshan Raj", position: "Technology Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
-    {name: "Bareera Gulraiz", position: "Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
-    {name: "Bhavya Jain", position: "Professional Development Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
-  ];
+// const Interns = () => {
+//   const internMembers = [
+//     { name: "Roshan Raj", position: "Technology Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/roshan-raj-9a06a9226/'},
+//     {name: "Bareera Gulraiz", position: "Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/bareera-gulraiz/'},
+//     {name: "Bhavya Jain", position: "Professional Development Intern", image: sudaayImg, linkedin: 'https://www.linkedin.com/in/bhavya-jain-27b27a272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}
+//   ];
 
-  return (
-    <div className="container mx-auto py-16">
-      <h2 className="text-4xl font-bold text-center mb-12 text-white">Interns</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {internMembers.map((member, index) => (
-          <motion.div 
-            key={index} 
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-          >
-            <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400" />
-            <div className="flex items-center justify-center gap-2">
-              <h3 className="text-2xl font-bold text-white">{member.name}</h3>
-              {member.linkedin && (
-                <a 
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-yellow-400 transition-colors duration-200"
-                >
-                  <LinkedinIcon size={20} />
-                </a>
-              )}
-            </div>
-            <p className="text-xl text-yellow-400">{member.position}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="container mx-auto py-16">
+//       <h2 className="text-4xl font-bold text-center mb-12 text-white">Interns</h2>
+//       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+//         {internMembers.map((member, index) => (
+//           <motion.div 
+//             key={index} 
+//             className="text-center"
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+//           >
+//             <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400" />
+//             <div className="flex items-center justify-center gap-2">
+//               <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+//               {member.linkedin && (
+//                 <a 
+//                   href={member.linkedin}
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="text-white hover:text-yellow-400 transition-colors duration-200"
+//                 >
+//                   <LinkedinIcon size={20} />
+//                 </a>
+//               )}
+//             </div>
+//             <p className="text-xl text-yellow-400">{member.position}</p>
+//           </motion.div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
 const TeamPage = () => (
   <div className="min-h-screen bg-purple-900 text-white py-20 px-4">
     <div className="text-center mb-2">
     </div>
     <ExecTeam />
-    <Interns />
+    {/* <Interns /> */}
   </div>
 );
 
