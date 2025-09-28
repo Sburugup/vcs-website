@@ -770,7 +770,7 @@ const EventsPage = () => {
 
   const events = [
     { date: new Date(2024, 8, 30), time: '6:30 PM - 7:30 PM',  location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroEvent },
-    { date: new Date(2024, 9, 8), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "What is Venture Capital?", description: "What is VC? History of VC? VC vs other investment types?", image: whatIsVcEvent},
+    { date: new Date(2024, 9, 8), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Intro to VC and the Analyst Role", description: "What is VC?", image: whatIsVcEvent},
     { date: new Date(2024, 9, 17), time: '6:30 PM - 7:30 PM', location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeaker},
     { date: new Date(2024, 9, 22), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantEvent},
     { date: new Date(2024, 10, 7), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises", image: felipeSpeaker},
@@ -794,16 +794,16 @@ const EventsPage = () => {
   ];
 
   const months = [
-    { name: 'September', year: 2024, month: 8 },
-    { name: 'October', year: 2024, month: 9 },
-    { name: 'November', year: 2024, month: 10 },
-    { name: 'December', year: 2024, month: 11 },
-    { name: 'January', year: 2025, month: 0 },
-    { name: 'February', year: 2025, month: 1 },
-    { name: 'March', year: 2025, month: 2 },
-    { name: 'April', year: 2025, month: 3 },
-    { name: 'May', year: 2025, month: 4 },
-    { name: 'June', year: 2025, month: 5 }
+    { name: 'September', year: 2025, month: 8 },
+    { name: 'October', year: 2025, month: 9 },
+    { name: 'November', year: 2025, month: 10 },
+    { name: 'December', year: 2025, month: 11 },
+    { name: 'January', year: 2026, month: 0 },
+    { name: 'February', year: 2026, month: 1 },
+    { name: 'March', year: 2026, month: 2 },
+    { name: 'April', year: 2026, month: 3 },
+    { name: 'May', year: 2026, month: 4 },
+    { name: 'June', year: 2026, month: 5 }
   ];
 
   const currentMonth = new Date().getMonth();
