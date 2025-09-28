@@ -769,7 +769,17 @@ const EventsPage = () => {
   const currentMonthRef = useRef(null);
 
   const events = [
-    { date: new Date(2024, 8, 30), time: '6:30 PM - 7:30 PM',  location: "", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroEvent },
+    { date: new Date(2025, 9, 7), time: '6:30 PM - 7:30 PM',  location: "", title: "Meet the Board", description: "Board intro", image: boardIntroEvent }, //Week 1
+    { date: new Date(2025, 9, 14), time: '6:30 PM - 7:30 PM', location: "", title: "Intro to VC and the Analyst Role", description: "", image: boardIntroEvent}, //Week 2
+    { date: new Date(2025, 9, 21), time: '6:30 PM - 7:30 PM', location: "", title: "Deal Flow: Sourcing & Due Diligence", description: "Board Intro", image: boardIntroEvent}, //Week3
+    { date: new Date(2025, 9, 28), time: '6:30 PM - 7:30 PM', location: "", title: "Valuation Basics", description: "Board Intro", image: boardIntroEvent}, //Week 4
+    { date: new Date(2025, 10, 4), time: '6:30 PM - 7:30 PM', location: "", title: "No events", description: "Board Intro", image: boardIntroEvent}, //Week 5
+    { date: new Date(2025, 10, 11), time: '6:30 PM - 7:30 PM', location: "", title: "Products, Problems & Markets", description: "Board Intro", image: boardIntroEvent}, //Week 6
+    { date: new Date(2025, 10, 18), time: '6:30 PM - 7:30 PM', location: "", title: "Cap Tables & Dilution", description: "Board Intro", image: boardIntroEvent}, //Week 7
+    { date: new Date(2025, 10, 25), time: '6:30 PM - 7:30 PM', location: "", title: "VC Fund Finance", description: "Board Intro", image: boardIntroEvent}, //Week 8 
+    { date: new Date(2025, 11, 2), time: '6:30 PM - 7:30 PM', location: "", title: "Analyst Toolkit Deep Dive", description: "Board Intro", image: boardIntroEvent}, //Week 9    
+    { date: new Date(2025, 11, 9), time: '6:30 PM - 7:30 PM', location: "", title: "No events", description: "Board Intro", image: boardIntroEvent}, //Week 10 
+
     // { date: new Date(2024, 9, 8), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Intro to VC and the Analyst Role", description: "What is VC?", image: whatIsVcEvent},
     // { date: new Date(2024, 9, 17), time: '6:30 PM - 7:30 PM', location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeaker},
     // { date: new Date(2024, 9, 22), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantEvent},
