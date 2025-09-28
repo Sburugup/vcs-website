@@ -32,30 +32,30 @@ import redwoodCollective from './assets/membercompanies/redwoodcollective.png'
 //Event imports for calendar
 
 // Speaker events
-import nikhilSpeaker from './assets/speakers/nikhil.png'
-import felipeSpeaker from './assets/speakers/felipe.png'
-import vanCleveSpeaker from './assets/speakers/vanCleve.png'
-import amritSpeaker from './assets/speakers/amritPanjabi.png'
-import himanshuSpeaker from './assets/speakers/himanshu.png'
-import bankTechSpeaker from './assets/speakers/bankTech.png'
+// import nikhilSpeaker from './assets/speakers/nikhil.png'
+// import felipeSpeaker from './assets/speakers/felipe.png'
+// import vanCleveSpeaker from './assets/speakers/vanCleve.png'
+// import amritSpeaker from './assets/speakers/amritPanjabi.png'
+// import himanshuSpeaker from './assets/speakers/himanshu.png'
+// import bankTechSpeaker from './assets/speakers/bankTech.png'
 
 // VCS events
-import boardIntroEvent from './assets/events/boardIntro.png'
-import qualVsQuantEvent from './assets/events/qualVsQuant.png'
-import whatIsVcEvent from './assets/events/whatIsVc.png' 
-import vcsMfcMastersEvent from './assets/events/vcsMfcMasters.png'
-import caseStudiesEvent from './assets/events/caseStudies.png'
-import speedDateEvent from './assets/events/speedDate.png'
-import memberSocialEvent from './assets/events/memberSocial.png'
+// import boardIntroEvent from './assets/events/boardIntro.png'
+// import qualVsQuantEvent from './assets/events/qualVsQuant.png'
+// import whatIsVcEvent from './assets/events/whatIsVc.png' 
+// import vcsMfcMastersEvent from './assets/events/vcsMfcMasters.png'
+// import caseStudiesEvent from './assets/events/caseStudies.png'
+// import speedDateEvent from './assets/events/speedDate.png'
+// import memberSocialEvent from './assets/events/memberSocial.png'
 
 // Speaker Events
 //import sidebarSummit from './assets/otherimgs/sidebarSummit.png'
-import boardImg from './assets/otherimgs/vcsBoard.png'
-import membershipImg from './assets/otherimgs/vcsMembership.png'
-import miniAIF from './assets/otherimgs/miniAIF.png'
-import vcsLogo from './assets/otherimgs/vcsLogo.png';
-import winterAnalystProgramImg from './assets/otherimgs/winterAnalystProgram.png'
-import springAnalystProgramImg from './assets/otherimgs/springAnalystProgram.png'
+// import boardImg from './assets/otherimgs/vcsBoard.png'
+// import membershipImg from './assets/otherimgs/vcsMembership.png'
+// import miniAIF from './assets/otherimgs/miniAIF.png'
+// import vcsLogo from './assets/otherimgs/vcsLogo.png';
+// import winterAnalystProgramImg from './assets/otherimgs/winterAnalystProgram.png'
+// import springAnalystProgramImg from './assets/otherimgs/springAnalystProgram.png'
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
