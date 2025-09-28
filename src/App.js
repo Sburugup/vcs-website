@@ -40,7 +40,7 @@ import redwoodCollective from './assets/membercompanies/redwoodcollective.png'
 // import bankTechSpeaker from './assets/speakers/bankTech.png'
 
 // VCS events
-// import boardIntroEvent from './assets/events/boardIntro.png'
+import boardIntroEvent from './assets/events/boardIntro.png'
 // import qualVsQuantEvent from './assets/events/qualVsQuant.png'
 // import whatIsVcEvent from './assets/events/whatIsVc.png' 
 // import vcsMfcMastersEvent from './assets/events/vcsMfcMasters.png'
@@ -50,12 +50,12 @@ import redwoodCollective from './assets/membercompanies/redwoodcollective.png'
 
 // Speaker Events
 //import sidebarSummit from './assets/otherimgs/sidebarSummit.png'
-// import boardImg from './assets/otherimgs/vcsBoard.png'
-// import membershipImg from './assets/otherimgs/vcsMembership.png'
+import boardImg from './assets/otherimgs/vcsBoard.png'
+import membershipImg from './assets/otherimgs/vcsMembership.png'
 // import miniAIF from './assets/otherimgs/miniAIF.png'
-// import vcsLogo from './assets/otherimgs/vcsLogo.png';
+import vcsLogo from './assets/otherimgs/vcsLogo.png';
 // import winterAnalystProgramImg from './assets/otherimgs/winterAnalystProgram.png'
-// import springAnalystProgramImg from './assets/otherimgs/springAnalystProgram.png'
+import springAnalystProgramImg from './assets/otherimgs/springAnalystProgram.png'
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
@@ -769,27 +769,27 @@ const EventsPage = () => {
   const currentMonthRef = useRef(null);
 
   const events = [
-    { date: new Date(2024, 8, 30), time: '6:30 PM - 7:30 PM',  location: "MSTB 124", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroEvent },
-    { date: new Date(2024, 9, 8), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Intro to VC and the Analyst Role", description: "What is VC?", image: whatIsVcEvent},
-    { date: new Date(2024, 9, 17), time: '6:30 PM - 7:30 PM', location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeaker},
-    { date: new Date(2024, 9, 22), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantEvent},
-    { date: new Date(2024, 10, 7), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises", image: felipeSpeaker},
-    { date: new Date(2024, 10, 12), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved", image: memberSocialEvent},
-    { date: new Date(2024, 10, 18), time: '6:30 PM - 7:30 PM', location: "SBI 5200", title: "Speciality Masters Program Information Session", description: "We are teaming up with the Math and Finance Club to bring you the Speciality Masters Program information session!", image: vcsMfcMastersEvent},
-    { date: new Date(2024, 10, 21), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: himanshuSpeaker},
-    { date: new Date(2024, 10, 26), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: caseStudiesEvent},
-    { date: new Date(2025, 0, 13), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Research and Investment Memos", description: "Join us for our first week of our 'Analyst Program' where you'll learn the basics of market research and how to create an effective investment memo.", image: winterAnalystProgramImg},
-    { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: miniAIF},
-    { date: new Date(2025, 0, 15), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Grant Van Cleve", description: "Managing Partner @Hangar 75 Ventures", image: vanCleveSpeaker},
-    { date: new Date(2025, 0, 20), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Sourcing and Due Dilligence", description: "Join us for our second week of our 'Analyst Program'!", image: winterAnalystProgramImg},
-    { date: new Date(2025, 0, 22), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Bank Tech Ventures Panel", description: "Carry Ransom and Katie Quelling", image: bankTechSpeaker},
-    { date: new Date(2025, 0, 27), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Product-Market Fit", description: "", image: winterAnalystProgramImg},
-    { date: new Date(2025, 0, 29), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Amrit Panjabi", description: "CB Insights and Alumni Ventures", image: amritSpeaker},
-    { date: new Date(2025, 1, 10), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: KPI's and Unit Economics", description: "", image: winterAnalystProgramImg},
-    { date: new Date(2025, 1, 12), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Member Social", description: "Speed Dating", image: speedDateEvent},
-    { date: new Date(2025, 1, 19), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Sizing and Valuation", description: "", image: winterAnalystProgramImg},
-    { date: new Date(2025, 1, 24), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Term Sheets and Financing", description: "", image: winterAnalystProgramImg},
-    { date: new Date(2025, 2, 3), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: VC Exits and Fund Operations", description: "", image: winterAnalystProgramImg},
+    { date: new Date(2024, 8, 30), time: '6:30 PM - 7:30 PM',  location: "", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroEvent },
+    // { date: new Date(2024, 9, 8), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Intro to VC and the Analyst Role", description: "What is VC?", image: whatIsVcEvent},
+    // { date: new Date(2024, 9, 17), time: '6:30 PM - 7:30 PM', location: "SST 220B", title: "Speaker: Nikhil Choudhary", description: "General Partner @ Nirman VCs", image: nikhilSpeaker},
+    // { date: new Date(2024, 9, 22), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Startup Analysis", description: "Qualitative vs. Quantitative; aka how does a VC analyze a startup?", image: qualVsQuantEvent},
+    // { date: new Date(2024, 10, 7), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Filipe Silva", description: "Head of Global Ops @ Hillside Enterprises", image: felipeSpeaker},
+    // { date: new Date(2024, 10, 12), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Venture Capital Firms 101", description: "Famous VC firms, how they are structured, and how to get involved", image: memberSocialEvent},
+    // { date: new Date(2024, 10, 18), time: '6:30 PM - 7:30 PM', location: "SBI 5200", title: "Speciality Masters Program Information Session", description: "We are teaming up with the Math and Finance Club to bring you the Speciality Masters Program information session!", image: vcsMfcMastersEvent},
+    // { date: new Date(2024, 10, 21), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "Speaker: Himanshu Vikram Singh", description: "Sr. Financial Analyst @ CerraCap Ventures", image: himanshuSpeaker},
+    // { date: new Date(2024, 10, 26), time: '6:30 PM - 7:30 PM', location: "MSTB 124", title: "VC Case Studies", description: "Exploring some of the most famous stories in VC; Uber, Airbnb, etc.", image: caseStudiesEvent},
+    // { date: new Date(2025, 0, 13), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Research and Investment Memos", description: "Join us for our first week of our 'Analyst Program' where you'll learn the basics of market research and how to create an effective investment memo.", image: winterAnalystProgramImg},
+    // { date: new Date(2025, 0, 14), time: '11:00 AM - 3:00 PM', location: "Dome of Stars Booth 30", title: "Mini AIF", description: "Come out to visit our booth at Mini AIF to hear about our new opportunities this quarter!", image: miniAIF},
+    // { date: new Date(2025, 0, 15), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Grant Van Cleve", description: "Managing Partner @Hangar 75 Ventures", image: vanCleveSpeaker},
+    // { date: new Date(2025, 0, 20), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Sourcing and Due Dilligence", description: "Join us for our second week of our 'Analyst Program'!", image: winterAnalystProgramImg},
+    // { date: new Date(2025, 0, 22), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Bank Tech Ventures Panel", description: "Carry Ransom and Katie Quelling", image: bankTechSpeaker},
+    // { date: new Date(2025, 0, 27), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Product-Market Fit", description: "", image: winterAnalystProgramImg},
+    // { date: new Date(2025, 0, 29), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Guest Speaker: Amrit Panjabi", description: "CB Insights and Alumni Ventures", image: amritSpeaker},
+    // { date: new Date(2025, 1, 10), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: KPI's and Unit Economics", description: "", image: winterAnalystProgramImg},
+    // { date: new Date(2025, 1, 12), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Member Social", description: "Speed Dating", image: speedDateEvent},
+    // { date: new Date(2025, 1, 19), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Market Sizing and Valuation", description: "", image: winterAnalystProgramImg},
+    // { date: new Date(2025, 1, 24), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: Term Sheets and Financing", description: "", image: winterAnalystProgramImg},
+    // { date: new Date(2025, 2, 3), time: '6:00 PM - 7:00 PM', location: "Social Ecology 2 - 1306", title: "Analyst Program: VC Exits and Fund Operations", description: "", image: winterAnalystProgramImg},
 
   ];
 
