@@ -31,18 +31,18 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-20 bg-purple-900 bg-opacity-90 shadow-md">
-      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+      <div className="container mx-auto px-2 md:px-4 py-2 flex justify-between items-center">
         <div className="flex items-center">
-          <img src={vcsLogo} alt="VCS Logo" className="h-16 w-auto mr-4" />
+          <img src={vcsLogo} alt="VCS Logo" className="h-12 md:h-16 w-auto mr-2 md:mr-4" />
           <h1 className="text-xl font-bold text-white hidden md:block">Venture Capital Society</h1>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-1 md:gap-2 flex-wrap">
           {/* Regular navigation buttons */}
           {['home', 'events', 'partnerships', 'team'].map((page) => (
             <motion.button
               key={page}
               onClick={() => setPage(page)}
-              className={`px-3 py-1 rounded-full text-sm font-bold ${
+              className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold ${
                 currentPage === page ? 'bg-yellow-400 text-purple-900' : 'bg-purple-800 text-white'
               }`}
               whileHover={{ scale: 1.1 }}
@@ -55,7 +55,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
           {/* Where We Go button */}
           <motion.button
             onClick={scrollToWhereWeGo}
-            className="px-3 py-1 rounded-full text-sm font-bold bg-purple-800 text-white"
+            className="px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold bg-purple-800 text-white whitespace-nowrap"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -66,7 +66,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
           <div className="relative join-dropdown">
             <motion.button
               onClick={() => setShowJoinDropdown(!showJoinDropdown)}
-              className={`px-3 py-1 rounded-full text-sm font-bold ${
+              className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold ${
                 currentPage === 'join' ? 'bg-yellow-400 text-purple-900' : 'bg-purple-800 text-white'
               }`}
               whileHover={{ scale: 1.1 }}
@@ -102,7 +102,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex items-center space-x-2 ml-4">
+          <div className="flex items-center gap-1 md:gap-2 md:ml-4">
             <motion.a
               href="https://www.instagram.com/vcs.uci?igsh=MWQ1ZGUxMzBkMA=="
               target="_blank"
@@ -111,7 +111,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <InstagramIcon size={24} />
+              <InstagramIcon size={20} className="md:w-6 md:h-6" />
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/company/venture-capital-society-uci/"
@@ -121,7 +121,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <LinkedinIcon size={24} />
+              <LinkedinIcon size={20} className="md:w-6 md:h-6" />
             </motion.a>
             <motion.div
               className="relative"
@@ -134,7 +134,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <MailIcon size={24} />
+                <MailIcon size={20} className="md:w-6 md:h-6" />
               </motion.div>
               <AnimatePresence>
                 {showEmail && (
