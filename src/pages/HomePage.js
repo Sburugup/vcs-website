@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { StyledTitle, InteractiveButton } from '../components/ui/StyledComponents';
+import { InteractiveButton } from '../components/ui/StyledComponents';
 import WhoWeArePage from './WhoWeArePage';
 import WhatWeDoPage from './WhatWeDoPage';
 import WhereWeGoPage from './WhereWeGoPage';
