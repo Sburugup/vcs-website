@@ -43,7 +43,7 @@ const ExecTeam = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400" />
+            <img src={member.image} alt={member.name} className="h-40 w-40 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover object-center" />
             <div className="flex items-center justify-center gap-2">
               <h3 className="text-2xl font-bold text-white">{member.name}</h3>
               {member.linkedin && (
