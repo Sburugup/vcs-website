@@ -29,6 +29,12 @@ const EventsPage = () => {
   const events = [
     { date: new Date(2025, 8, 29), time: '6:30 PM - 7:30 PM',  location: "Santora Pitch Lab", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroEvent },
     { date: new Date(2025, 9, 6), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Intro to Venture Capital", description: "Fall Quarter Program: Week 2", image: boardIntroEvent },
+    { date: new Date(2025, 9, 13), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Deal Sourcing and Due Diligence", description: "Fall Quarter Program: Week 3", image: boardIntroEvent },
+    { date: new Date(2025, 9, 20), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Valuation Basics", description: "Fall Quarter Program: Week 4", image: boardIntroEvent },
+    { date: new Date(2025, 10, 3), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Practice, Problems & Markets", description: "Fall Quarter Program: Week 6", image: boardIntroEvent },
+    { date: new Date(2025, 10, 10), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Cap Tables & Dilution", description: "Fall Quarter Program: Week 7", image: boardIntroEvent },
+    { date: new Date(2025, 10, 17), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "VC Fund Finance", description: "Fall Quarter Program: Week 8", image: boardIntroEvent },
+    { date: new Date(2025, 10, 24), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "VC Fund ToolKit", description: "Fall Quarter Program: Week 9", image: boardIntroEvent },
   ];
 
   const months = [
