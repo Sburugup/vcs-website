@@ -4,23 +4,23 @@ import Calendar from '../components/calendar';
 import EventModal from '../components/EventModal';
 
 // Event imports
-import nikhilSpeaker from '../assets/speakers/nikhil.png';
-import felipeSpeaker from '../assets/speakers/felipe.png';
-import vanCleveSpeaker from '../assets/speakers/vanCleve.png';
-import amritSpeaker from '../assets/speakers/amritPanjabi.png';
-import himanshuSpeaker from '../assets/speakers/himanshu.png';
-import bankTechSpeaker from '../assets/speakers/bankTech.png';
+// import nikhilSpeaker from '../assets/speakers/nikhil.png';
+// import felipeSpeaker from '../assets/speakers/felipe.png';
+// import vanCleveSpeaker from '../assets/speakers/vanCleve.png';
+// import amritSpeaker from '../assets/speakers/amritPanjabi.png';
+// import himanshuSpeaker from '../assets/speakers/himanshu.png';
+// import bankTechSpeaker from '../assets/speakers/bankTech.png';
 
 import boardIntroEvent from '../assets/events/boardIntro.png';
-import qualVsQuantEvent from '../assets/events/qualVsQuant.png';
-import whatIsVcEvent from '../assets/events/whatIsVc.png';
-import vcsMfcMastersEvent from '../assets/events/vcsMfcMasters.png';
-import caseStudiesEvent from '../assets/events/caseStudies.png';
-import speedDateEvent from '../assets/events/speedDate.png';
-import memberSocialEvent from '../assets/events/memberSocial.png';
+// import qualVsQuantEvent from '../assets/events/qualVsQuant.png';
+// import whatIsVcEvent from '../assets/events/whatIsVc.png';
+// import vcsMfcMastersEvent from '../assets/events/vcsMfcMasters.png';
+// import caseStudiesEvent from '../assets/events/caseStudies.png';
+// import speedDateEvent from '../assets/events/speedDate.png';
+// import memberSocialEvent from '../assets/events/memberSocial.png';
 
-import winterAnalystProgramImg from '../assets/otherimgs/winterAnalystProgram.png';
-import miniAIF from '../assets/otherimgs/miniAIF.png';
+// import winterAnalystProgramImg from '../assets/otherimgs/winterAnalystProgram.png';
+// import miniAIF from '../assets/otherimgs/miniAIF.png';
 
 const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
