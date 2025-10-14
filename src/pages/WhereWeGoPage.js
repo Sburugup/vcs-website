@@ -9,6 +9,17 @@ import profitrecovery from '../assets/membercompanies/profitrecovery.png';
 import tjbrothers from '../assets/membercompanies/tjbrothers.png';
 import bombellii from '../assets/membercompanies/bombellii.png';
 import redwoodCollective from '../assets/membercompanies/redwoodcollective.png';
+import nirman from '../assets/membercompanies/nirman.png';
+import halogen from '../assets/membercompanies/halogen.png';
+import unitedhealth from '../assets/membercompanies/unitedhealth.png';
+import ibm from '../assets/membercompanies/ibm.png';
+import tcaventure from '../assets/membercompanies/tcaventure.png';
+import gcp from '../aseets/membercompanies/gcp.png';
+import boeing from '../assets/membercompanies/boeing.png';
+import aws from '../assets/membercompanies/aws.png';
+import sap from '../assets/membercompanies/sap.png';
+import mdb from '../assets/membercompanies/mdb.png';
+import deloitte from '../assets/membercompanies/deloitte.png';
 
 const WhereWeGoPage = React.forwardRef((props, ref) => {
   const companyLogos = [
