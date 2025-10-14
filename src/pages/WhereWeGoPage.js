@@ -14,7 +14,7 @@ import halogen from '../assets/membercompanies/halogen.png';
 import unitedhealth from '../assets/membercompanies/unitedhealth.png';
 import ibm from '../assets/membercompanies/ibm.png';
 import tcaventure from '../assets/membercompanies/tcaventure.png';
-import gcp from '../aseets/membercompanies/gcp.png';
+import gcp from '../assets/membercompanies/gcp.png';
 import boeing from '../assets/membercompanies/boeing.png';
 import aws from '../assets/membercompanies/aws.png';
 import sap from '../assets/membercompanies/sap.png';
@@ -28,7 +28,18 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
     { logo: profitrecovery, link: 'https://prpllc.com/'},
     { logo: tjbrothers, link: 'https://www.tjbrothers.com/'},
     { logo: bombellii, link: 'https://web.virtualinternships.com/company-profile/bombellii-ventures-2e771e2c'},
-    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'}
+    { logo: redwoodCollective, link: 'https://www.redwoodcollective.net/'},
+    { logo: nirman, link: "https://www.nirman.vc/"},
+    { logo: halogen, link: "https://halogenvc.com/"},
+    { logo: unitedhealth, link: "https://www.unitedhealthgroup.com/"},
+    { logo: ibm, link: "https://www.ibm.com/us-en"},
+    { logo: tcaventure, link: "https://tcaventuregroup.com/"},
+    { logo: gcp, link: "https://www.gcpcapital.com/"},
+    { logo: boeing, link: "https://www.boeing.com/"},
+    { logo: aws, link: "https://aws.amazon.com/what-is-aws/?trk=d3b0f617-ecd4-42db-b5c2-23a90ee8907b&sc_channel=ps&ef_id=CjwKCAjwxrLHBhA2EiwAu9EdMxwQSpv1IUMcphf5i1a738D1alUFXnAdoBTpT6LKmrNtCvu2ZfKJphoCuE4QAvD_BwE:G:s&s_kwcid=AL!4422!3!651751059777!e!!g!!amazon%20web%20services!19852662197!145019195737&gad_campaignid=19852662197&gbraid=0AAAAADjHtp93dHzxl7xdZrsmSdyNw983n&gclid=CjwKCAjwxrLHBhA2EiwAu9EdMxwQSpv1IUMcphf5i1a738D1alUFXnAdoBTpT6LKmrNtCvu2ZfKJphoCuE4QAvD_BwE"},
+    { logo: sap, link: "https://www.sap.com/index.html"},
+    { logo: mdb, link: "https://www.mdb.com/"},
+    { logo: deloitte, link: "https://www.deloitte.com/us/en.html"}
   ];
 
   return (
