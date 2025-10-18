@@ -12,6 +12,10 @@ import EventModal from '../components/EventModal';
 // import bankTechSpeaker from '../assets/speakers/bankTech.png';
 import cerracapEvent from '../assets/speakers/cerracapEvent.png';
 import boardIntroEvent from '../assets/events/boardIntro.png';
+import fallwk2 from '../assets/events/fall quarter wk 2 2025.png';
+import fallwk3 from '../assets/events/fall quarter wk 3 2025.png';
+import fallwk4 from '../assets/events/fall quarter wk 4 2025.png';
+
 // import qualVsQuantEvent from '../assets/events/qualVsQuant.png';
 // import whatIsVcEvent from '../assets/events/whatIsVc.png';
 // import vcsMfcMastersEvent from '../assets/events/vcsMfcMasters.png';
@@ -28,9 +32,9 @@ const EventsPage = () => {
 
   const events = [
     { date: new Date(2025, 8, 29), time: '6:30 PM - 7:30 PM',  location: "Santora Pitch Lab", title: "Meet the Board", description: "Board intro, get to know everyone", image: boardIntroEvent },
-    { date: new Date(2025, 9, 6), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Intro to Venture Capital", description: "Fall Quarter Program: Week 2", image: boardIntroEvent },
-    { date: new Date(2025, 9, 13), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Deal Sourcing and Due Diligence", description: "Fall Quarter Program: Week 3", image: boardIntroEvent },
-    { date: new Date(2025, 9, 20), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Valuation Basics", description: "Fall Quarter Program: Week 4", image: boardIntroEvent },
+    { date: new Date(2025, 9, 6), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Intro to Venture Capital", description: "Fall Quarter Program: Week 2", image: fallwk2 },
+    { date: new Date(2025, 9, 13), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Deal Sourcing and Due Diligence", description: "Fall Quarter Program: Week 3", image: fallwk3 },
+    { date: new Date(2025, 9, 20), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Valuation Basics", description: "Fall Quarter Program: Week 4", image: fallwk4 },
     { date: new Date(2025, 9, 22), time: '6:30 PM - 7:30 PM',  location: "Santora Pitch Lab", title: "Speaker Event - CerraCap Ventures", description: "Himanshu Singh, Sr Financial Analyst, talking about Life in and around Venture Capital", image: cerracapEvent},
     { date: new Date(2025, 10, 3), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Practice, Problems & Markets", description: "Fall Quarter Program: Week 6", image: boardIntroEvent },
     { date: new Date(2025, 10, 10), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Cap Tables & Dilution", description: "Fall Quarter Program: Week 7", image: boardIntroEvent },
