@@ -40,7 +40,7 @@ const EventsPage = () => {
     { date: new Date(2025, 10, 10), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Cap Tables & Dilution", description: "Fall Quarter Program: Week 7", image: boardIntroEvent },
     { date: new Date(2025, 10, 17), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "VC Fund Finance", description: "Fall Quarter Program: Week 8", image: boardIntroEvent },
     { date: new Date(2025, 10, 24), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "VC Fund ToolKit", description: "Fall Quarter Program: Week 9", image: boardIntroEvent },
-    { date: new Date(2025, 11, 4), time: '5:00 PM - 9:00 PM',  location: "Chipotle UTC", title: "Chipotle Fundraiser", description: "Come support VCS at Chipotle", image: },
+    { date: new Date(2025, 11, 4), time: '5:00 PM - 9:00 PM',  location: "Chipotle UTC", title: "Chipotle Fundraiser", description: "Come support VCS at Chipotle"},
 
   ];
 
