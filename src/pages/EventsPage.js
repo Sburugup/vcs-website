@@ -42,12 +42,12 @@ const EventsPage = () => {
     { date: new Date(2025, 10, 24), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "VC Fund ToolKit", description: "Fall Quarter Program: Week 9", image: boardIntroEvent },
     { date: new Date(2025, 11, 4), time: '5:00 PM - 9:00 PM',  location: "Chipotle UTC", title: "Chipotle Fundraiser", description: "Come support VCS at Chipotle"},
      { date: new Date(2026, 0, 14), time: '6:00 PM - 7:00 PM',  location: "Santora Pitch Lab", title: "Program Kickoff", description: "Giving everyone access to internship applications", image: boardIntroEvent },
-    { date: new Date(2026, 0, 21), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "VC Industry Deep Dive", description: "Using Pitchbook to understand industries.", image: fallwk2 },
-    { date: new Date(2026, 0, 28), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Anti VC Framework", description: "Taking a look at successful companies that weren't supported by VCs", image: fallwk3 },
-    { date: new Date(2026, 1, 11), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Pitch Deck Guide", description: "Going over creating a pitch deck", image: fallwk4 },
-    { date: new Date(2026, 1, 18), time: '6:30 PM - 7:30 PM',  location: "SST 122", title: "Deal Showcase", description: "Interns present their deal sourcing projects"},
-    { date: new Date(2026, 1, 25), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Interview 101", description: "Exxplaining behavioral and technical interview questions"},
-    { date: new Date(2026, 2, 4), time: '6:00 PM - 7:00 PM',  location: "SST 122", title: "Startup Red Flags", description: "What to avoid in startups based on financial metrics"},
+    { date: new Date(2026, 0, 21), time: '6:00 PM - 7:00 PM',  location: "SSL 129", title: "VC Industry Deep Dive", description: "Using Pitchbook to understand industries.", image: fallwk2 },
+    { date: new Date(2026, 0, 28), time: '6:00 PM - 7:00 PM',  location: "SSL 129", title: "Anti VC Framework", description: "Taking a look at successful companies that weren't supported by VCs", image: fallwk3 },
+    { date: new Date(2026, 1, 11), time: '6:00 PM - 7:00 PM',  location: "SSL 129", title: "Pitch Deck Guide", description: "Going over creating a pitch deck", image: fallwk4 },
+    { date: new Date(2026, 1, 18), time: '6:30 PM - 7:30 PM',  location: "SSL 129", title: "Deal Showcase", description: "Interns present their deal sourcing projects"},
+    { date: new Date(2026, 1, 25), time: '6:00 PM - 7:00 PM',  location: "SSL 129", title: "Interview 101", description: "Exxplaining behavioral and technical interview questions"},
+    { date: new Date(2026, 2, 4), time: '6:00 PM - 7:00 PM',  location: "SSL 129", title: "Startup Red Flags", description: "What to avoid in startups based on financial metrics"},
   ];
 
   const months = [
