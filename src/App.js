@@ -179,7 +179,7 @@ const renderPage = (currentPage, setPage, scrollToWhoWeAre, scrollToWhatWeDo, sc
       return <MembershipPage/>;
     case 'analystProgram':
       return <AnalystProgramPage/>;
-    case 'Board Application':
+    case 'boardApplication':
       return <BoardAppPage />;
 
     default:
