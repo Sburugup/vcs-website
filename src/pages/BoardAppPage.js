@@ -124,13 +124,13 @@ const BoardApplicationsPage = () => {
             </motion.div>
 
             {/* Note */}
-            <motion.div
-              className="bg-yellow-400/10 rounded-xl p-6 backdrop-blur-sm border border-yellow-400/30"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-            </motion.div>
+            // <motion.div
+            //   className="bg-yellow-400/10 rounded-xl p-6 backdrop-blur-sm border border-yellow-400/30"
+            //   initial={{ opacity: 0, x: -20 }}
+            //   animate={{ opacity: 1, x: 0 }}
+            //   transition={{ duration: 0.6, delay: 0.4 }}
+            // >
+            // </motion.div>
           </div>
 
           {/* Right Column - Poster / Visual */}
