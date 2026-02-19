@@ -72,7 +72,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              Join
+              Join Us
             </motion.button>
             <AnimatePresence>
               {showJoinDropdown && (
