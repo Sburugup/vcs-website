@@ -31,18 +31,18 @@ const BoardApplicationsPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Apply / More Info
+                Apply Now
               </motion.a>
 
               <motion.a
-                href="https://linktr.ee/ucivcs" // <-- optionally set this to your Google Form directly
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfEIxmFSELV6r3_nKLIews18WZu7FU-DGIF-7YxEpY04vbCbA/viewform" // <-- optionally set this to your Google Form directly
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-10 py-4 bg-purple-700/40 border border-purple-500/40 rounded-full font-semibold text-lg text-purple-100 hover:bg-purple-700/55 hover:scale-105 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View Linktree
+                View Linktree / More Info
               </motion.a>
             </div>
 
