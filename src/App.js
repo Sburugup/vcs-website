@@ -10,6 +10,7 @@ import PartnershipsPage from './pages/PartnershipsPage';
 import TeamPage from './pages/TeamPage';
 import MembershipPage from './pages/MembershipPage';
 import AnalystProgramPage from './pages/AnalystProgramPage';
+import BoardAppPage from './pages/BoardAppPage'
 
 const VCSWebsite = () => {
   const [currentPage, setCurrentPage] = useState('intro');
