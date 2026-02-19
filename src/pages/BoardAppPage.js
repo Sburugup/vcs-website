@@ -130,12 +130,6 @@ const BoardApplicationsPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <p className="text-lg">
-                <span className="text-yellow-400">Tip:</span> Include a short
-                paragraph on what you’d improve this quarter + one example of
-                something you shipped/executed recently (project, club, class,
-                work).
-              </p>
             </motion.div>
           </div>
 
