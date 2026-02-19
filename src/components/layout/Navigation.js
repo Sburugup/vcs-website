@@ -1,49 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { InstagramIcon, LinkedinIcon, MailIcon } from 'lucide-react';
-import vcsLogo from '../../assets/otherimgs/vcsLogo.png';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react";
+import vcsLogo from "../../assets/otherimgs/vcsLogo.png";
 
 const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
   const [showEmail, setShowEmail] = useState(false);
   const [showJoinDropdown, setShowJoinDropdown] = useState(false);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (desktop-friendly)
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (showJoinDropdown && !event.target.closest('.join-dropdown')) {
+      if (showJoinDropdown && !event.target.closest(".join-dropdown")) {
         setShowJoinDropdown(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showJoinDropdown]);
 
   const handleMembershipClick = () => {
-    setPage('join');
+    setPage("join");
     setShowJoinDropdown(false);
   };
 
   const handleAnalystProgramClick = () => {
-    setPage('analystProgram');
+    setPage("analystProgram");
+    setShowJoinDropdown(false);
+  };
+
+  const handleBoardApplicationsClick = () => {
+    setPage("boardApplication"); // <-- per your routing key
     setShowJoinDropdown(false);
   };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-20 bg-purple-900 bg-opacity-90 shadow-md">
+    <nav className="absolute top-0 left-0 right-0 z-[9999] bg-purple-900 bg-opacity-90 shadow-md">
       <div className="container mx-auto px-2 md:px-4 py-2 flex justify-between items-center">
         <div className="flex items-center">
-          <img src={vcsLogo} alt="VCS Logo" className="h-12 md:h-16 w-auto mr-2 md:mr-4" />
-          <h1 className="text-xl font-bold text-white hidden md:block">Venture Capital Society</h1>
+          <img
+            src={vcsLogo}
+            alt="VCS Logo"
+            className="h-12 md:h-16 w-auto mr-2 md:mr-4"
+          />
+          <h1 className="text-xl font-bold text-white hidden md:block">
+            Venture Capital Society
+          </h1>
         </div>
+
         <div className="flex items-center gap-1 md:gap-2 flex-wrap">
           {/* Regular navigation buttons */}
-          {['home', 'events', 'partnerships', 'team'].map((page) => (
+          {["home", "events", "partnerships", "team"].map((page) => (
             <motion.button
               key={page}
               onClick={() => setPage(page)}
               className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold ${
-                currentPage === page ? 'bg-yellow-400 text-purple-900' : 'bg-purple-800 text-white'
+                currentPage === page
+                  ? "bg-yellow-400 text-purple-900"
+                  : "bg-purple-800 text-white"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -63,50 +77,72 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
           </motion.button>
 
           {/* Join Dropdown */}
-          <div className="relative join-dropdown">
+          <div className="relative join-dropdown z-[9999]">
             <motion.button
-              onClick={() => setShowJoinDropdown(!showJoinDropdown)}
+              onClick={() => setShowJoinDropdown((v) => !v)}
               className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold ${
-                currentPage === 'join' ? 'bg-yellow-400 text-purple-900' : 'bg-purple-800 text-white'
+                currentPage === "join" ||
+                currentPage === "analystProgram" ||
+                currentPage === "boardApplication"
+                  ? "bg-yellow-400 text-purple-900"
+                  : "bg-purple-800 text-white"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               Join Us
             </motion.button>
+
             <AnimatePresence>
               {showJoinDropdown && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className="absolute right-0 mt-2 py-2 w-48 bg-purple-800 rounded-lg shadow-xl z-50"
-                >
-                  <motion.button
-                    onClick={handleMembershipClick}
-                    className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
-                    whileHover={{ x: 5 }}
+                <>
+                  {/* Mobile overlay (captures taps; prevents menu being behind content) */}
+                  <div
+                    className="fixed inset-0 z-[9998] sm:hidden"
+                    onClick={() => setShowJoinDropdown(false)}
+                  />
+
+                  {/* Dropdown panel: fixed on mobile, absolute on sm+ */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className={[
+                      // Mobile: fixed full-width-ish panel
+                      "fixed sm:absolute",
+                      "top-20 left-3 right-3 sm:top-auto sm:left-auto sm:right-0",
+                      "sm:mt-2",
+                      "py-2 sm:w-48",
+                      "bg-purple-800 rounded-lg shadow-xl",
+                      "z-[9999]",
+                      "overflow-hidden",
+                    ].join(" ")}
                   >
-                    Membership
-                  </motion.button>
-                  <motion.button
-                    onClick={handleAnalystProgramClick}
-                    className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
-                    whileHover={{ x: 5 }}
-                  >
-                    Analyst Program
-                  </motion.button>
-                  <motion.button
-                    onClick={() => {
-                      setPage("boardApplication");
-                      setShowJoinDropdown(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
-                    whileHover={{ x: 5 }}
-                  >
-                    Board Applications
-                  </motion.button>
-                </motion.div>
+                    <motion.button
+                      onClick={handleMembershipClick}
+                      className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                      whileHover={{ x: 5 }}
+                    >
+                      Membership
+                    </motion.button>
+
+                    <motion.button
+                      onClick={handleAnalystProgramClick}
+                      className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                      whileHover={{ x: 5 }}
+                    >
+                      Analyst Program
+                    </motion.button>
+
+                    <motion.button
+                      onClick={handleBoardApplicationsClick}
+                      className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                      whileHover={{ x: 5 }}
+                    >
+                      Board Applications
+                    </motion.button>
+                  </motion.div>
+                </>
               )}
             </AnimatePresence>
           </div>
@@ -123,6 +159,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
             >
               <InstagramIcon size={20} className="md:w-6 md:h-6" />
             </motion.a>
+
             <motion.a
               href="https://www.linkedin.com/company/venture-capital-society-uci/"
               target="_blank"
@@ -133,11 +170,12 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
             >
               <LinkedinIcon size={20} className="md:w-6 md:h-6" />
             </motion.a>
+
             <motion.div
               className="relative"
               onHoverStart={() => setShowEmail(true)}
               onHoverEnd={() => setShowEmail(false)}
-              onClick={() => setShowEmail(!showEmail)}
+              onClick={() => setShowEmail((v) => !v)}
             >
               <motion.div
                 className="text-white hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
@@ -146,13 +184,14 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               >
                 <MailIcon size={20} className="md:w-6 md:h-6" />
               </motion.div>
+
               <AnimatePresence>
                 {showEmail && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute right-0 mt-2 py-2 px-4 bg-white text-purple-900 rounded-md shadow-lg text-sm whitespace-nowrap"
+                    className="absolute right-0 mt-2 py-2 px-4 bg-white text-purple-900 rounded-md shadow-lg text-sm whitespace-nowrap z-[9999]"
                   >
                     ucivcs@gmail.com
                   </motion.div>
