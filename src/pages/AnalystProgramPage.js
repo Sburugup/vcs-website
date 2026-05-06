@@ -4,7 +4,7 @@ import springAnalystProgramImg from '../assets/otherimgs/springAnalystProgram.pn
 
 const AnalystProgramPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-violet-50/35 to-slate-100 text-slate-900 py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -13,17 +13,17 @@ const AnalystProgramPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
               Analyst Program
             </h1>
-            <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-8 leading-relaxed">
               Gain the skills, knowledge, and connections to excel in venture capital
             </p>
             <motion.a
               href="https://forms.gle/5J8XheRQuhNiCqJt9"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-12 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300"
+              className="inline-block px-12 py-4 bg-amber-400 text-slate-900 rounded-full font-bold text-xl shadow-md hover:bg-violet-800 hover:text-white hover:shadow-lg hover:scale-105 transition duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -37,17 +37,17 @@ const AnalystProgramPage = () => {
           <div className="space-y-8">
             {/* Main Description */}
             <motion.div 
-              className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+              className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+              <h2 className="text-3xl font-bold mb-6 text-violet-900 border-b-2 border-amber-400 inline-block pb-1">
                 Mastering the Fundamentals of Venture Capital
               </h2>
-              <div className="space-y-6 text-lg text-purple-100">
+              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
                 <p>
-                  The heart of our Analyst Program is a <span className="font-bold text-yellow-300">weekly exploration of critical concepts in venture capital and entrepreneurship</span>. Through <span className="font-bold text-yellow-300">interactive sessions, industry insights, and practical case studies</span>, we break down one essential topic each week. This structured approach equips our analysts with the tools to excel in sourcing deals, performing due diligence, analyzing markets, and understanding the intricate mechanics of startups and venture firms.
+                  The heart of our Analyst Program is a <span className="font-bold text-violet-900">weekly exploration of critical concepts in venture capital and entrepreneurship</span>. Through <span className="font-bold text-violet-900">interactive sessions, industry insights, and practical case studies</span>, we break down one essential topic each week. This structured approach equips our analysts with the tools to excel in sourcing deals, performing due diligence, analyzing markets, and understanding the intricate mechanics of startups and venture firms.
                 </p>
                 <p>
                   Our program is designed not only to prepare members for competitive VC roles but also to sharpen their strategic thinking and analytical skills. By the end of the program, participants emerge with the confidence and expertise needed to navigate the dynamic world of venture capital.
@@ -55,7 +55,7 @@ const AnalystProgramPage = () => {
                 <p>
                   For student founders and aspiring investors, the massive information asymmetry between startups and VCs can make securing funding or breaking into venture capital seem impossible. Our Analyst Program demystifies the venture capital process, breaking down term sheets, valuation strategies, and investor decision-making so you can approach fundraising with confidence—whether you're a student entrepreneur building your first startup or a future investor looking to back the next big idea.
                 </p>
-                <p className="font-medium text-yellow-300">
+                <p className="font-medium text-amber-800">
                   Stay tuned for more updates as we dive into the core of venture capital, one topic at a time.
                 </p>
               </div>
@@ -63,13 +63,13 @@ const AnalystProgramPage = () => {
 
             {/* Membership Note */}
             <motion.div 
-              className="bg-yellow-400/10 rounded-xl p-6 backdrop-blur-sm border border-yellow-400/30"
+              className="bg-amber-50 rounded-xl p-6 border border-amber-200/80"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <p className="text-lg">
-                <span className="text-yellow-400">Note:</span> The Analyst Program events are open to all UCI students. While membership is not required to attend, we recommend joining VCS to access additional resources and materials that enhance your understanding of the concepts covered in the program.
+              <p className="text-lg text-slate-700 leading-relaxed">
+                <span className="text-violet-900 font-semibold">Note:</span> The Analyst Program events are open to all UCI students. While membership is not required to attend, we recommend joining VCS to access additional resources and materials that enhance your understanding of the concepts covered in the program.
               </p>
             </motion.div>
           </div>
@@ -90,36 +90,36 @@ const AnalystProgramPage = () => {
               
               {/* Program Highlights */}
               <motion.div 
-                className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+                className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+                <h2 className="text-3xl font-bold mb-6 text-violet-900 border-b-2 border-amber-400 inline-block pb-1">
                   At the end of the program you can:
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3 group">
-                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
-                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                    <span className="text-violet-600 text-2xl mt-1" aria-hidden>✦</span>
+                    <span className="text-lg text-slate-700 group-hover:text-violet-900 transition-colors duration-300">
                       Work on a hands-on project with a VC/Startup based in socal
                     </span>
                   </div>
                   <div className="flex items-start space-x-3 group">
-                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
-                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                    <span className="text-violet-600 text-2xl mt-1" aria-hidden>✦</span>
+                    <span className="text-lg text-slate-700 group-hover:text-violet-900 transition-colors duration-300">
                       Stay on the team of VCS as an analyst and continue to work on projects every quarter following completion
                     </span>
                   </div>
                   <div className="flex items-start space-x-3 group">
-                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
-                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                    <span className="text-violet-600 text-2xl mt-1" aria-hidden>✦</span>
+                    <span className="text-lg text-slate-700 group-hover:text-violet-900 transition-colors duration-300">
                       Get priority for board positions
                     </span>
                   </div>
                   <div className="flex items-start space-x-3 group">
-                    <span className="text-yellow-400 text-2xl mt-1">✦</span>
-                    <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                    <span className="text-violet-600 text-2xl mt-1" aria-hidden>✦</span>
+                    <span className="text-lg text-slate-700 group-hover:text-violet-900 transition-colors duration-300">
                       Network and make meaningful connections with industry professionals
                     </span>
                   </div>

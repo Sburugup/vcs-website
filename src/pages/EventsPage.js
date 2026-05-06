@@ -50,21 +50,39 @@ const EventsPage = () => {
     { date: new Date(2026, 2, 4), time: '6:00 PM - 7:00 PM',  location: "SSL 129", title: "Startup Red Flags", description: "What to avoid in startups based on financial metrics"},
   ];
 
-  const months = [
-    { name: 'September', year: 2025, month: 8 },
-    { name: 'October', year: 2025, month: 9 },
-    { name: 'November', year: 2025, month: 10 },
-    { name: 'December', year: 2025, month: 11 },
-    { name: 'January', year: 2026, month: 0 },
-    { name: 'February', year: 2026, month: 1 },
-    { name: 'March', year: 2026, month: 2 },
-    { name: 'April', year: 2026, month: 3 },
-    { name: 'May', year: 2026, month: 4 },
-    { name: 'June', year: 2025, month: 5 }
-  ];
-
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
+
+  const monthMap = new Map();
+  events
+    .slice()
+    .sort((a, b) => a.date - b.date)
+    .forEach((event) => {
+      const month = event.date.getMonth();
+      const year = event.date.getFullYear();
+      const key = `${year}-${month}`;
+      if (!monthMap.has(key)) {
+        monthMap.set(key, {
+          name: event.date.toLocaleString('en-US', { month: 'long' }),
+          year,
+          month,
+        });
+      }
+    });
+
+  const currentKey = `${currentYear}-${currentMonth}`;
+  if (!monthMap.has(currentKey)) {
+    const now = new Date(currentYear, currentMonth, 1);
+    monthMap.set(currentKey, {
+      name: now.toLocaleString('en-US', { month: 'long' }),
+      year: currentYear,
+      month: currentMonth,
+    });
+  }
+
+  const months = Array.from(monthMap.values()).sort(
+    (a, b) => new Date(a.year, a.month, 1) - new Date(b.year, b.month, 1)
+  );
 
   useEffect(() => {
     if (currentMonthRef.current) {
@@ -73,17 +91,21 @@ const EventsPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-purple-900 text-white py-20 px-4">
+    <div className="min-h-screen bg-transparent text-slate-900 py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-bold text-center mb-12">Upcoming Events</h1>
+        <h1 className="text-5xl font-bold text-center mb-12 text-slate-900">Upcoming Events</h1>
         {months.map((monthData) => (
           <div
-            key={monthData.name}
+            key={`${monthData.year}-${monthData.month}`}
             ref={monthData.month === currentMonth && monthData.year === currentYear ? currentMonthRef : null}
           >
             <Calendar 
               monthData={monthData} 
-              events={events.filter(event => event.date.getMonth() === monthData.month)}
+              events={events.filter(
+                (event) =>
+                  event.date.getMonth() === monthData.month &&
+                  event.date.getFullYear() === monthData.year
+              )}
               onEventClick={setSelectedEvent}
             />
           </div>

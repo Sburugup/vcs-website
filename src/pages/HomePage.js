@@ -18,11 +18,11 @@ const HomePage = ({ setPage, scrollToWhoWeAre, scrollToWhatWeDo, scrollToWhereWe
 
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center min-h-screen text-center bg-purple-900 overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center min-h-screen text-center bg-transparent overflow-hidden">
         <DynamicWordCloud avoidRect={contentRect} />
-        <div ref={contentRef} className="relative z-20 p-8 bg-purple-900 bg-opacity-80 rounded-lg shadow-lg">
+        <div ref={contentRef} className="relative z-20 p-8 max-w-3xl mx-4 bg-white/92 rounded-2xl shadow-md border border-slate-200/80">
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-4 text-white"
+            className="text-4xl md:text-6xl font-bold mb-4 text-slate-900"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -30,7 +30,7 @@ const HomePage = ({ setPage, scrollToWhoWeAre, scrollToWhatWeDo, scrollToWhereWe
             Welcome to VCS at UCI
           </motion.h1>
           <motion.p 
-            className="mb-8 text-lg md:text-xl text-white"
+            className="mb-8 text-lg md:text-xl text-slate-600 max-w-[62ch] mx-auto"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -72,55 +72,18 @@ const DynamicWordCloud = ({ avoidRect }) => {
     { text: 'SCALING', size: 28 },
     { text: 'DISRUPTION', size: 26 },
     { text: 'PRINCIPAL', size: 20 },
-    { text: 'LARGE', size: 26 },
-    { text: 'POTENTIALLY', size: 22 },
-    { text: 'NOVEL', size: 26 },
-    { text: 'ALTHOUGH', size: 24 },
-    { text: 'BIOTECHNOLOGY', size: 26 },
-    { text: 'RETURNS', size: 24 },
     { text: 'POTENTIAL', size: 30 },
     { text: 'PARTNERS', size: 28 },
     { text: 'RISK', size: 20 },
-    { text: 'BANKING', size: 22 },
-    { text: 'FIRM', size: 45 },
-    { text: 'HIGH', size: 42 },
     { text: 'EQUITY', size: 40 },
     { text: 'COMPANIES', size: 38 },
     { text: 'PRIVATE', size: 36 },
-    { text: 'CAPITALISTS', size: 34 },
-    { text: 'LIMITED', size: 32 },
     { text: 'INVESTORS', size: 30 },
-    { text: 'COMPANY', size: 28 },
-    { text: 'POSITION', size: 26 },
     { text: 'EXPERIENCE', size: 24 },
-    { text: 'RATES', size: 22 },
-    { text: 'TYPICALLY', size: 20 },
-    { text: 'DEBT', size: 20 },
-    { text: 'PARTICULAR', size: 18 },
-    { text: 'INTEREST', size: 18 },
-    { text: 'MANAGEMENT', size: 18 },
-    { text: 'FIRMS', size: 18 },
-    { text: 'FUNDS', size: 18 },
-    { text: 'LOAN', size: 18 },
     { text: 'NETWORKS', size: 18 },
-    { text: 'OPERATING', size: 18 },
-    { text: 'ASSOCIATE', size: 22 },
-    { text: 'MOVE', size: 20 },
-    { text: 'REALIZING', size: 18 },
-    { text: 'MAKES', size: 16 },
-    { text: 'KNOWN', size: 20 },
-    { text: 'FIND', size: 18 },
-    { text: 'YEARS', size: 18 },
-    { text: 'TEND', size: 16 },
-    { text: 'BACKGROUND', size: 20 },
-    { text: 'FUNDS', size: 24 },
-    { text: 'ADDITION', size: 18 },
-    { text: 'OPERATIONAL', size: 28 },
     { text: 'PARTNERSHIP', size: 28 },
     { text: 'ROUND', size: 26 },
-    { text: 'ANOTHER', size: 26 },
     { text: 'POSITIONING', size: 24 },
-    { text: 'GROWTH', size: 28 },
   ], []);
 
   useEffect(() => {
@@ -136,52 +99,72 @@ const DynamicWordCloud = ({ avoidRect }) => {
     const placeWords = () => {
       const placed = [];
       const { width, height } = dimensions;
-      const padding = 20;
-      const maxAttempts = 200;
-    
+      const padding = 24;
+      const maxAttemptsPerZone = 30;
+      const minGap = 18;
+
+      const columns = 4;
+      const rows = 3;
+      const zoneWidth = (width - padding * 2) / columns;
+      const zoneHeight = (height - padding * 2) / rows;
+
+      const zones = [];
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < columns; col++) {
+          zones.push({
+            xMin: padding + col * zoneWidth,
+            xMax: padding + (col + 1) * zoneWidth,
+            yMin: padding + row * zoneHeight,
+            yMax: padding + (row + 1) * zoneHeight,
+          });
+        }
+      }
+
       words.forEach((word) => {
-        let attempts = 0;
-        
-        while (attempts < maxAttempts) {
-          const x = Math.random() * (width - padding * 2) + padding;
-          const y = Math.random() * (height - padding * 2) + padding;
-    
-          const bbox = {
-            left: x - word.size * word.text.length * 0.25,
-            right: x + word.size * word.text.length * 0.25,
-            top: y - word.size * 0.6,
-            bottom: y + word.size * 0.6
-          };
-    
-          if (bbox.left > padding && bbox.right < width - padding && 
-              bbox.top > padding && bbox.bottom < height - padding) {
-            const overlap = placed.some(w => 
-              !(bbox.left > w.bbox.right || 
-                bbox.right < w.bbox.left || 
+        const startZone = Math.floor(Math.random() * zones.length);
+        let placedWord = false;
+
+        for (let zoneOffset = 0; zoneOffset < zones.length && !placedWord; zoneOffset++) {
+          const zone = zones[(startZone + zoneOffset) % zones.length];
+
+          for (let attempt = 0; attempt < maxAttemptsPerZone; attempt++) {
+            const x = Math.random() * (zone.xMax - zone.xMin) + zone.xMin;
+            const y = Math.random() * (zone.yMax - zone.yMin) + zone.yMin;
+
+            const bbox = {
+              left: x - word.size * word.text.length * 0.25 - minGap,
+              right: x + word.size * word.text.length * 0.25 + minGap,
+              top: y - word.size * 0.6 - minGap,
+              bottom: y + word.size * 0.6 + minGap,
+            };
+
+            if (bbox.left <= padding || bbox.right >= width - padding ||
+                bbox.top <= padding || bbox.bottom >= height - padding) {
+              continue;
+            }
+
+            const overlap = placed.some(w =>
+              !(bbox.left > w.bbox.right ||
+                bbox.right < w.bbox.left ||
                 bbox.top > w.bbox.bottom ||
                 bbox.bottom < w.bbox.top)
             );
-    
-            const avoidContentArea = 
-              bbox.left < avoidRect.left + avoidRect.width &&
-              bbox.right > avoidRect.left &&
-              bbox.top < avoidRect.top + avoidRect.height &&
-              bbox.bottom > avoidRect.top;
-    
+
+            const avoidContentArea =
+              bbox.left < avoidRect.left + avoidRect.width + 70 &&
+              bbox.right > avoidRect.left - 70 &&
+              bbox.top < avoidRect.top + avoidRect.height + 50 &&
+              bbox.bottom > avoidRect.top - 50;
+
             if (!overlap && !avoidContentArea) {
               placed.push({ ...word, x, y, bbox });
+              placedWord = true;
               break;
             }
           }
-    
-          attempts++;
-        }
-    
-        if (attempts === maxAttempts) {
-          console.warn(`Could not place word: ${word.text}`);
         }
       });
-    
+
       setPlacedWords(placed);
     };
 
@@ -189,20 +172,20 @@ const DynamicWordCloud = ({ avoidRect }) => {
   }, [dimensions, words, avoidRect]);
 
   return (
-    <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid meet">
+    <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="xMidYMid meet" aria-hidden>
       {placedWords.map((word, index) => (
         <motion.text
-          key={word.text}
+          key={`${word.text}-${index}`}
           x={word.x}
           y={word.y}
           fontSize={word.size}
-          fill="#a78bfa"
-          fillOpacity="0.15"
+          fill="#7c3aed"
+          fillOpacity="0.07"
           textAnchor="middle"
           dominantBaseline="middle"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: index * 0.1, duration: 0.5 }}
+          transition={{ delay: index * 0.08, duration: 0.4 }}
         >
           {word.text}
         </motion.text>

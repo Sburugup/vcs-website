@@ -2,14 +2,14 @@ import React from 'react';
 import { StyledTitle, StyledSubheading } from '../components/ui/StyledComponents';
 
 const WhatWeDoPage = React.forwardRef((props, ref) => (
-  <div ref={ref} className="min-h-screen bg-purple-900 text-white py-20 px-4">
-    <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-16">
+  <div ref={ref} className="bg-transparent text-slate-900 py-14 md:py-16 px-6">
+    <div className="max-w-5xl mx-auto">
+      <div className="mb-14">
         <StyledTitle>What We Do</StyledTitle>
       </div>
-      <div className="mb-12">
+      <section className="mb-12">
         <StyledSubheading>Strategies</StyledSubheading>
-        <ul className="list-disc list-outside text-xl mt-4 pl-5 space-y-4">
+        <ul className="list-disc list-outside text-xl mt-4 pl-5 space-y-4 max-w-[72ch] text-slate-700 leading-relaxed">
           <li>Education and Training: Offer comprehensive workshops, seminars, and simulations to
           teach students the fundamentals of venture capital and startup investment.</li>
           <li>Partnership Development: Build strong relationships with local venture capital firms,
@@ -21,17 +21,17 @@ const WhatWeDoPage = React.forwardRef((props, ref) => (
           members and newcomers, ensuring continuous learning and development for all
           participants.</li>
         </ul>
-      </div>
-      <div>
+      </section>
+      <section className="pt-10 border-t border-slate-200">
         <StyledSubheading>Goals</StyledSubheading>
-        <ul className="list-disc list-outside text-xl mt-4 pl-5 space-y-4">
+        <ul className="list-disc list-outside text-xl mt-4 pl-5 space-y-4 max-w-[72ch] text-slate-700 leading-relaxed">
           <li>Educate at least 30 students quarterly on venture capital and investment strategies.</li>
           <li>Form partnerships with at least 5 local venture capital firms and industry experts.</li>
           <li>Conduct 4-7 educational workshops and practical simulations each quarter.</li>
           <li>Develop a pipeline of talent through our Learning Development Team, transitioning them
           to the Executive Board as they gain experience.</li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 ));

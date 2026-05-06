@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { InstagramIcon, LinkedinIcon, MailIcon } from "lucide-react";
-import vcsLogo from "../../assets/otherimgs/vcsLogo.png";
+import vcsLogo from "../../assets/otherimgs/newLogo.png";
 
-const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
+const Navigation = ({ currentPage, setPage }) => {
   const [showEmail, setShowEmail] = useState(false);
   const [showJoinDropdown, setShowJoinDropdown] = useState(false);
 
@@ -29,21 +29,17 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
     setShowJoinDropdown(false);
   };
 
-  const handleBoardApplicationsClick = () => {
-    setPage("boardApplication"); // <-- per your routing key
-    setShowJoinDropdown(false);
-  };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-[9999] bg-purple-900 bg-opacity-90 shadow-md">
+    <nav className="absolute top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <div className="container mx-auto px-2 md:px-4 py-2 flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center gap-2 md:gap-3">
           <img
             src={vcsLogo}
             alt="VCS Logo"
-            className="h-12 md:h-16 w-auto mr-2 md:mr-4"
+            className="h-12 md:h-16 w-auto max-w-[140px] md:max-w-[180px] object-contain"
           />
-          <h1 className="text-xl font-bold text-white hidden md:block">
+          <h1 className="text-lg md:text-xl font-semibold text-slate-900">
             Venture Capital Society
           </h1>
         </div>
@@ -54,10 +50,10 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
             <motion.button
               key={page}
               onClick={() => setPage(page)}
-              className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold ${
+              className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold transition-colors ${
                 currentPage === page
-                  ? "bg-yellow-400 text-purple-900"
-                  : "bg-purple-800 text-white"
+                  ? "bg-violet-700 text-white shadow-sm"
+                  : "bg-white text-slate-700 border border-slate-200 hover:border-violet-300 hover:text-violet-800"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -66,26 +62,15 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
             </motion.button>
           ))}
 
-          {/* Where We Go button */}
-          <motion.button
-            onClick={scrollToWhereWeGo}
-            className="px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold bg-purple-800 text-white whitespace-nowrap"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Where We Go
-          </motion.button>
-
           {/* Join Dropdown */}
           <div className="relative join-dropdown z-[9999]">
             <motion.button
               onClick={() => setShowJoinDropdown((v) => !v)}
-              className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold ${
+              className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold transition-colors ${
                 currentPage === "join" ||
-                currentPage === "analystProgram" ||
-                currentPage === "boardApplication"
-                  ? "bg-yellow-400 text-purple-900"
-                  : "bg-purple-800 text-white"
+                currentPage === "analystProgram"
+                  ? "bg-violet-700 text-white shadow-sm"
+                  : "bg-white text-slate-700 border border-slate-200 hover:border-violet-300 hover:text-violet-800"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -113,14 +98,14 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
                       "top-20 left-3 right-3 sm:top-auto sm:left-auto sm:right-0",
                       "sm:mt-2",
                       "py-2 sm:w-48",
-                      "bg-purple-800 rounded-lg shadow-xl",
+                      "bg-white rounded-lg shadow-xl border border-slate-200",
                       "z-[9999]",
                       "overflow-hidden",
                     ].join(" ")}
                   >
                     <motion.button
                       onClick={handleMembershipClick}
-                      className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                      className="block w-full text-left px-4 py-2 text-slate-700 hover:bg-violet-50 hover:text-violet-900 transition-colors duration-200"
                       whileHover={{ x: 5 }}
                     >
                       Membership
@@ -128,19 +113,12 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
 
                     <motion.button
                       onClick={handleAnalystProgramClick}
-                      className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
+                      className="block w-full text-left px-4 py-2 text-slate-700 hover:bg-violet-50 hover:text-violet-900 transition-colors duration-200"
                       whileHover={{ x: 5 }}
                     >
                       Analyst Program
                     </motion.button>
 
-                    <motion.button
-                      onClick={handleBoardApplicationsClick}
-                      className="block w-full text-left px-4 py-2 text-white hover:bg-purple-700 hover:text-yellow-400 transition-colors duration-200"
-                      whileHover={{ x: 5 }}
-                    >
-                      Board Applications
-                    </motion.button>
                   </motion.div>
                 </>
               )}
@@ -153,7 +131,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               href="https://www.instagram.com/vcs.uci?igsh=MWQ1ZGUxMzBkMA=="
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400 transition-colors duration-300"
+              className="text-slate-500 hover:text-violet-700 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -164,7 +142,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               href="https://www.linkedin.com/company/venture-capital-society-uci/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400 transition-colors duration-300"
+              className="text-slate-500 hover:text-violet-700 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -178,7 +156,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
               onClick={() => setShowEmail((v) => !v)}
             >
               <motion.div
-                className="text-white hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+                className="text-slate-500 hover:text-violet-700 transition-colors duration-300 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -191,7 +169,7 @@ const Navigation = ({ currentPage, setPage, scrollToWhereWeGo }) => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute right-0 mt-2 py-2 px-4 bg-white text-purple-900 rounded-md shadow-lg text-sm whitespace-nowrap z-[9999]"
+                    className="absolute right-0 mt-2 py-2 px-4 bg-white text-slate-900 border border-slate-200 rounded-md shadow-lg text-sm whitespace-nowrap z-[9999]"
                   >
                     ucivcs@gmail.com
                   </motion.div>

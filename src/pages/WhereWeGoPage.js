@@ -43,14 +43,14 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen bg-purple-900 text-white py-20 px-4">
+    <div ref={ref} className="min-h-screen bg-transparent text-slate-900 py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="mb-14">
           <StyledTitle>Where We Go</StyledTitle>
         </div>
         <div className="mb-12">
           <StyledSubheading>Our Alumni Success Stories</StyledSubheading>
-          <p className="text-xl mt-4 mb-12">
+          <p className="text-xl mt-4 mb-12 max-w-[72ch] text-slate-700 leading-relaxed">
             Our members have gone on to successful careers at top venture capital firms, startups, and technology companies.
           </p>
           
@@ -61,8 +61,8 @@ const WhereWeGoPage = React.forwardRef((props, ref) => {
                 href={company.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white bg-opacity-10 rounded-lg p-4 flex items-center justify-center h-32"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
+                className="bg-slate-50 rounded-lg p-4 flex items-center justify-center h-32 border border-slate-200 shadow-sm hover:border-violet-300 hover:shadow-md transition-shadow"
+                whileHover={{ scale: 1.03 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}

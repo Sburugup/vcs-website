@@ -5,7 +5,7 @@ import boardApplicationsImg from "../assets/otherimgs/boardApplications.png"; //
 
 const BoardApplicationsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-violet-50/35 to-slate-100 text-slate-900 py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -14,11 +14,11 @@ const BoardApplicationsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
               Board Applications
             </h1>
 
-            <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-8 leading-relaxed">
               Help shape VCS at UCI — apply for the board and build the venture ecosystem on campus.
             </p>
 
@@ -27,7 +27,7 @@ const BoardApplicationsPage = () => {
                 href="https://linktr.ee/ucivcs" // <-- update if you have a direct form link
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-12 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition duration-300"
+                className="inline-block px-12 py-4 bg-amber-400 text-slate-900 rounded-full font-bold text-xl shadow-md hover:bg-violet-800 hover:text-white hover:shadow-lg hover:scale-105 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -38,7 +38,7 @@ const BoardApplicationsPage = () => {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfEIxmFSELV6r3_nKLIews18WZu7FU-DGIF-7YxEpY04vbCbA/viewform" // <-- optionally set this to your Google Form directly
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 bg-purple-700/40 border border-purple-500/40 rounded-full font-semibold text-lg text-purple-100 hover:bg-purple-700/55 hover:scale-105 transition duration-300"
+                className="inline-block px-10 py-4 bg-white border-2 border-violet-200 rounded-full font-semibold text-lg text-violet-900 hover:bg-violet-50 hover:border-violet-300 hover:scale-105 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -46,9 +46,9 @@ const BoardApplicationsPage = () => {
               </motion.a>
             </div>
 
-            <p className="mt-6 text-purple-200">
+            <p className="mt-6 text-slate-600">
               Applications due by{" "}
-              <span className="font-bold text-yellow-300">March 15</span>.
+              <span className="font-bold text-violet-900">March 15</span>.
             </p>
           </motion.div>
         </div>
@@ -57,21 +57,21 @@ const BoardApplicationsPage = () => {
           {/* Left Column - Description */}
           <div className="space-y-8">
             <motion.div
-              className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+              className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+              <h2 className="text-3xl font-bold mb-6 text-violet-900 border-b-2 border-amber-400 inline-block pb-1">
                 Lead, Build, and Grow VCS
               </h2>
 
-              <div className="space-y-6 text-lg text-purple-100">
+              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
                 <p>
                   VCS Board is where our community gets built — from speaker
                   events and partnerships to member experience and operations.
                   We’re looking for students who want to{" "}
-                  <span className="font-bold text-yellow-300">
+                  <span className="font-bold text-violet-900">
                     take ownership, execute consistently, and help scale the
                     venture ecosystem at UCI
                   </span>
@@ -84,7 +84,7 @@ const BoardApplicationsPage = () => {
                   outreach, systems, and more.
                 </p>
 
-                <p className="font-medium text-yellow-300">
+                <p className="font-medium text-amber-800">
                   If you’re excited to learn fast, lead teams, and build
                   something meaningful — apply.
                 </p>
@@ -93,16 +93,16 @@ const BoardApplicationsPage = () => {
 
             {/* Roles */}
             <motion.div
-              className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+              className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+              <h2 className="text-3xl font-bold mb-6 text-violet-900 border-b-2 border-amber-400 inline-block pb-1">
                 Positions Open
               </h2>
 
-              <ul className="space-y-3 text-lg text-purple-100">
+              <ul className="space-y-3 text-lg text-slate-700">
                 {[
                   "President",
                   "Vice President",
@@ -114,8 +114,8 @@ const BoardApplicationsPage = () => {
                   "Marketing",
                 ].map((role) => (
                   <li key={role} className="flex items-center gap-3">
-                    <span className="text-yellow-400 text-xl">✦</span>
-                    <span className="hover:text-yellow-300 transition-colors duration-300">
+                    <span className="text-violet-600 text-xl" aria-hidden>✦</span>
+                    <span className="hover:text-violet-900 transition-colors duration-300">
                       {role}
                     </span>
                   </li>
@@ -150,12 +150,12 @@ const BoardApplicationsPage = () => {
               />
 
               <motion.div
-                className="bg-purple-800/50 rounded-xl p-8 backdrop-blur-sm border border-purple-700"
+                className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
               >
-                <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+                <h2 className="text-3xl font-bold mb-6 text-violet-900 border-b-2 border-amber-400 inline-block pb-1">
                   What you’ll gain
                 </h2>
 
@@ -167,21 +167,21 @@ const BoardApplicationsPage = () => {
                     "A direct role in shaping VCS culture and strategy",
                   ].map((item) => (
                     <div key={item} className="flex items-start space-x-3 group">
-                      <span className="text-yellow-400 text-2xl mt-1">✦</span>
-                      <span className="text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                      <span className="text-violet-600 text-2xl mt-1" aria-hidden>✦</span>
+                      <span className="text-lg text-slate-700 group-hover:text-violet-900 transition-colors duration-300">
                         {item}
                       </span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-8 rounded-lg bg-purple-900/40 border border-purple-700 p-4">
-                  <p className="text-purple-100">
+                <div className="mt-8 rounded-lg bg-violet-50 border border-violet-200 p-4">
+                  <p className="text-slate-700">
                     Deadline:{" "}
-                    <span className="font-bold text-yellow-300">March 15</span>
+                    <span className="font-bold text-violet-900">March 15</span>
                     {" · "}
                     More details on{" "}
-                    <span className="font-bold text-yellow-300">
+                    <span className="font-bold text-amber-800">
                       linktr.ee/ucivcs
                     </span>
                   </p>

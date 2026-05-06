@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DollarSign } from 'lucide-react';
 
 // Import components
 import Navigation from './components/layout/Navigation';
@@ -18,6 +17,7 @@ const VCSWebsite = () => {
   const whoWeAreRef = useRef(null);
   const whatWeDoRef = useRef(null);
   const whereWeGoRef = useRef(null);
+  const pendingWhereWeGoScrollRef = useRef(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -27,13 +27,31 @@ const VCSWebsite = () => {
 
     const timer = setTimeout(() => {
       setCurrentPage('home');
-    }, 3500);
+    }, 2400);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       clearTimeout(timer);
     };
   }, []);
+
+  useEffect(() => {
+    if (currentPage !== 'home' || !pendingWhereWeGoScrollRef.current) {
+      return;
+    }
+
+    const scrollWhenReady = () => {
+      if (!whereWeGoRef.current) {
+        return;
+      }
+      whereWeGoRef.current.scrollIntoView({ behavior: 'smooth' });
+      pendingWhereWeGoScrollRef.current = false;
+    };
+
+    // Let Home content mount before attempting the scroll.
+    const timer = setTimeout(scrollWhenReady, 60);
+    return () => clearTimeout(timer);
+  }, [currentPage]);
 
   const scrollToWhoWeAre = () => {
     whoWeAreRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,18 +62,22 @@ const VCSWebsite = () => {
   };
 
   const scrollToWhereWeGo = () => {
+    if (currentPage !== 'home') {
+      pendingWhereWeGoScrollRef.current = true;
+      setCurrentPage('home');
+      return;
+    }
     whereWeGoRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="relative w-full bg-black text-white overflow-x-hidden">
+    <div className="relative w-full bg-slate-50 text-slate-900 overflow-x-hidden">
       <AnimatedBackground cursorPosition={cursorPosition} />
       <div className="relative z-10 w-full">
         {currentPage !== 'intro' && (
           <Navigation 
             currentPage={currentPage} 
-            setPage={setCurrentPage} 
-            scrollToWhereWeGo={scrollToWhereWeGo}
+            setPage={setCurrentPage}
           />
         )}
         <AnimatePresence mode="wait">
@@ -64,10 +86,10 @@ const VCSWebsite = () => {
           ) : (
             <motion.div
               key={currentPage}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
               className="w-full"
             >
               {renderPage(
@@ -84,7 +106,6 @@ const VCSWebsite = () => {
           )}
         </AnimatePresence>
       </div>
-      <AnimatedCursor cursorPosition={cursorPosition} />
     </div>
   );
 };
@@ -94,23 +115,46 @@ const IntroAnimation = () => {
   
   return (
     <motion.div 
-      className="fixed inset-0 flex items-center justify-center bg-black"
+      className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-slate-50 via-violet-50 to-slate-100 text-slate-900"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
     >
-      <div className="text-4xl md:text-6xl font-bold">
+      <div className="flex flex-col items-center gap-5">
+        <div className="text-4xl md:text-6xl font-extrabold tracking-tight">
         {letters.map((letter, index) => (
           <motion.span
             key={index}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="inline-block"
+            transition={{ delay: index * 0.04, duration: 0.3 }}
+            className="inline-block text-violet-900"
           >
             {letter}
           </motion.span>
         ))}
+        </div>
+        <motion.div
+          className="h-1.5 w-48 overflow-hidden rounded-full bg-violet-100"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
+        >
+          <motion.div
+            className="h-full rounded-full bg-amber-300"
+            initial={{ x: '-100%' }}
+            animate={{ x: '0%' }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+          />
+        </motion.div>
+        <motion.p
+          className="text-sm font-medium tracking-wide text-slate-500"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45, duration: 0.25 }}
+        >
+          Venture Capital Society at UCI
+        </motion.p>
       </div>
     </motion.div>
   );
@@ -119,13 +163,13 @@ const IntroAnimation = () => {
 const AnimatedBackground = ({ cursorPosition }) => {
   return (
     <div 
-      className="fixed inset-0 bg-gradient-to-br from-purple-900 to-indigo-800"
+      className="fixed inset-0 bg-gradient-to-br from-slate-50 via-violet-100/50 to-slate-100"
       style={{
         backgroundPosition: `${cursorPosition.x / 20}px ${cursorPosition.y / 20}px`,
         transition: 'background-position 0.2s ease-out'
       }}
     >
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-[0.12]">
         {[...Array(100)].map((_, i) => (
           <div 
             key={i} 
@@ -141,19 +185,6 @@ const AnimatedBackground = ({ cursorPosition }) => {
         ))}
       </div>
     </div>
-  );
-};
-
-const AnimatedCursor = ({ cursorPosition }) => {
-  return (
-    <motion.div
-      className="fixed pointer-events-none z-50 text-yellow-400"
-      animate={{ x: cursorPosition.x - 12, y: cursorPosition.y - 12 }}
-      transition={{ type: 'spring', damping: 30, mass: 0.5 }}
-      style={{ mixBlendMode: 'difference' }}
-    >
-      <DollarSign size={24} />
-    </motion.div>
   );
 };
 
